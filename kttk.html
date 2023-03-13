@@ -1,0 +1,312 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0px;
+            margin: 0px auto;
+        }
+        .wrapper {
+            width: 960px;
+            height: 700px;
+            background-color: aliceblue;
+        }
+        .header {
+            width: 960px;
+            height: 150px;
+            background-color: #294e79;
+            position: absolute;
+        }
+        .bong img {
+            width: 90px;
+            height: 130px;
+            position: absolute;
+            left: 10px;
+            top: 10px;
+        }
+        .p1 {
+            color: white;
+            font-size: 36px;
+            position: absolute;
+            top: 30px;
+            
+            left: 100px;
+        }
+        .p2 {
+            color: white;
+            position: absolute;
+            font-size: 16px;
+            top: 75px;
+            left: 100px;
+        }
+        .Search {
+      
+            position: absolute;
+            text-align: center;
+            top: 25px;
+            right: 40px;
+        }
+        #txtSearch {
+            position: absolute;
+            right: 40px;
+        }
+        .menu {
+         
+              display: flex;
+        width: 500px;
+        position: absolute;
+        bottom: 0px;
+        right: 0;
+        }
+         .menu li:hover {
+            background-color: pink;
+        }
+        
+        .menu li {
+            position: absolute;
+            height: 45px;
+            width: 110px;
+            background-color: #3d73b1;
+            line-height: 45px;
+            list-style: none;
+            text-align: center;
+            bottom: 0px;
+            color: white;
+        }
+        .menu li:last-child {
+            left : 400px;   
+            width: 90px;
+           
+        }
+      
+        .menu li:nth-child(4) { 
+             left: 280px; 
+            
+        }
+        .menu li:nth-child(3) {
+             left: 160px;
+        }.menu li:nth-child(2) {
+             left: 40px;
+        }.menu li:nth-child(1) {
+             left: -50px;
+          
+            width: 80px;
+            
+        }
+      
+        .spanStart {
+            margin-left: 10px;
+            color: white;
+            line-height: 30px;
+            font-size: 12px;
+        }
+        .spanEnd {
+            color: #4f8bbb;
+            line-height: 30px;
+            font-size: 12px;
+        }
+        .content {
+            width: 960px;
+            height: 520px;
+            background-color: rgb(250, 253, 253);
+            position: absolute;
+            top: 150px;
+        }
+        .colLeft {
+            height: 450px;
+            width: 600px;
+            position: absolute;
+            top: 30px;
+
+        }
+        #headForColLeft {
+            position: absolute;
+            left: 10px;
+            height: 30px;
+            
+        }
+        #Left {
+            width: 600px;
+            position: absolute;
+            top: 40px;
+            border: 1px dotted black;
+            
+        }
+        .col1 {
+            position: absolute;
+            
+            width: 320px;
+            left: 10px;
+            top: 10px;
+        }
+        .col1  p {   
+
+            position: absolute;
+            top: 45px;
+             text-shadow: 8px 8px 5px green;
+            color: red;
+            text-align: justify;
+            font-size: 15px;
+            font-style: italic;
+            font-family:  sans-serif;
+        }
+  
+        .Submit {
+                margin: 10px;
+        width: 60px;
+        height: 30px;
+            
+        }
+        .Reset{         margin: 10px;
+        width: 60px;
+        height: 30px;
+        }
+        .center {
+            width: 230px;
+            position: absolute;
+            top: 50px;
+            left: 390px;
+            
+        }
+        
+        .center  p {
+            color: gray;
+            font-size: 17px;
+        }
+        .Right {
+            position: absolute;
+            width: 310px;
+            height: 370px;
+            background-color: rgb(236, 235, 235);
+            right: 5px;
+            top: 50px;
+        }
+          .footer {
+            width: 960px;
+            height: 40px;
+            
+            background-color: #294e79;
+            position: absolute;
+            top: 620px;
+        }
+        .readmore { 
+        position: absolute;
+        right: 10px;	}
+        
+        .footer span {   font-size: 17px; }
+        
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="header">
+            <div class="bong">
+                <img src="../html/hoa_.PNG" alt="">
+                <div class="p1">FLowerBox 360</div>
+                <div class="p2">...to get your daily dose of luxury roses!</div>
+            </div>
+            <form action="" class="Search">
+                <input type="text" name="txtSearch" id="txtSearch" placeholder="Search the site...">
+                <input type="button" value="GO" id="btnGo">
+            </form>
+            <div class="menu">
+                <ul>
+                    <li>Home</li>
+                    <li>Promotion</li>
+                    <li>Gift Baskets</li>
+                    <li>Flower Services</li>
+                    <li>About</li>
+                </ul>
+            </div>
+        </div>
+        <div class="content">
+            <div class="colLeft">
+                <h3 id="headForColLeft">Why Not Contact Us Today!</h3>
+                <br>
+                  <p>------------------------------------------------------------------------------------------------------------</p>
+                <div class="col1">
+                    <p>For FlowerBox 360 shoppers, that means<br> not only can you send your friends and <br>loved ones the highest quality flowers<br> found on online, but that you can do so at a <br> great value.</p>
+                    <form action=" ">
+                    <br>  <br>  <br>  <br>  <br>  <br>   <br>  
+                     <table>
+                                <tr>
+                                    <td><label for="name">Name:</label></td>
+                                    <td><label for="email">Email:</label></td>
+                                </tr>
+                                <tr>
+                                    <td><input type="text" name="" id="name"></td>a
+                                    <td><input type="email" name="" id="email"></td>
+                                </tr>
+                                <tr>
+                                    <td> <label for="tel">Telephone:</label></td>
+                                    <td> <label for="sub">Subject:</label></td>
+                                </tr>
+                                <tr>
+                                    <td><input type="tel" name="" id="tel"></td>
+                                    <td><input type="text" name="" id="sub"></td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2"> <label for="mess">Messgae:</label></td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2"><textarea name="" id="mess" cols="40" rows="5"></textarea></td>
+                                </tr>
+                                <tr>
+                                
+                                
+                                    <td><input class="Submit"  value="Submit"><input class="Reset" type="button"
+                                            value="Reset"></td>
+                                </tr>
+                            </table>
+                        </form>
+                    </div>
+                <div class="center">
+                
+                    <h3>FlowerBox 360 Info!</h3>
+                  <h4>------------------------------------------</h4>
+                    <br>
+                    
+                    <p>Operating Hours: 
+                    Monday-Friday: 9:00am - 5:00am.
+                    Saturday:9.00am-1.00pm
+                    Sunday: Closed (No Deliveries)
+                    Order Online 24/7
+                    <br>
+                    <br>
+                    Software Engineering Dept.
+                    Information Technology Falcuty
+                    First Floor, H Building<br>
+                    <br>
+        
+                    12 Nguyen Van Bao St., Ward 4
+                   Go Vap District
+                    Ho Chi Minh City
+                    Tel: 0283 8940 390
+                    Fax: 0283 9940 954</p>
+                </div>
+            </div>
+            <div class="Right">
+                    <h3>Discounts & Specials</h3>
+                    
+                    <h4>------------------------------------------------</h4>
+                    <hr>
+                     <img class="flower" src="flower.png" alt="" height="200px" width="250px">
+                      <p class="p2_right_content">FlowerBox 360 offers many great discounts throughout the year, from coupons and coupon codes, to promo codes and other savings. We also offer military flower discounts to our wonderful troops!
+                </p>
+                <a class="readmore" href=""><b>Read More >><b> </a>
+            </div>
+            
+        </div>
+        <div class="footer">
+            <span class="spanStart">Copyright @ 2017 - All Rights Reserved </span>
+            <span class="spanEnd">- Software Engineering Department - Industrial University of Ho Chi Minh City</span>
+        </div>
+    </div>
+</body>
+</html>
