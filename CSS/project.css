@@ -1,0 +1,268 @@
+*
+{
+    padding: 0;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+.wrapper
+{
+    height: 2000px;
+}
+header
+{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 160px;
+    background-color:#bf0000;
+    position: fixed;
+}
+.input
+{
+    position: relative;
+    width: 1010px;
+    height: 40px;
+    border-radius: 7px;
+    border: none;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    outline: none;
+    padding-left: 10px;
+}
+.button
+{
+    margin-right: 110px;
+    margin-top: 29.5px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 70px;
+    height: 40px;
+    font-size: 20px;
+    background-color: antiquewhite;
+    border: 0;
+    border-top-right-radius: 7px;
+    border-bottom-right-radius: 7px;
+    cursor: pointer;
+}
+.shop
+{
+    position: absolute;
+    height: 41.5px;
+    width: 40px;
+    margin-left: 1430px;
+    background-color: #bf0000;
+    border: 0;
+    cursor: pointer;
+}
+.top ul 
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.top-menu
+{
+    list-style: none;
+}
+.top-menu >a
+{
+    text-decoration: none;
+}
+.container
+{
+    padding-top: 20px;
+    padding-left: 25px;
+}
+.content
+{
+    position: absolute;
+    background-color: black;
+    display: flex;
+    justify-content: space-around;
+    justify-items: center;
+    width: 1500px;
+    height: 60px;
+    border-radius: 7px;
+    margin-top: 10px;
+    margin-left: 14px;
+    
+}
+.content .menu
+{
+    width:1100px;
+}
+.content .menu 
+{
+    list-style: none;
+}
+.menu li a
+{
+    display: block;
+    text-decoration: none;
+    color: aliceblue;
+    font-size: 17px;
+}
+.menu li
+{
+    position: relative;
+}
+.menu .sub-menu 
+{ 
+    display: none; 
+    position: absolute;
+    padding: 15px 0px;
+    list-style: none;
+    width: 170px;
+    height: 345px;
+    background-color: #fff;
+    margin-top: 10px;
+}
+.content .menu
+{
+    display: flex;
+    justify-content: space-between;
+    justify-items: center;
+    margin-top: 20px;
+}
+.menu .sub-menu a
+{
+    /* margin-top: -15px; */
+    padding: 20px;
+    padding-left:20px;
+    color: black;
+    font-size: 15px;
+    
+}
+.menu >li>a
+{
+    position: relative;
+}
+.menu >li>a::before 
+{
+    height: 3px;
+    width: 100%;
+    content: "";
+    background: #55595c;
+    position: absolute;
+    bottom: -10px;
+    left: 0px;
+    display: none;
+}
+.menu >li:hover>a::before
+{
+    display: block;
+}
+.menu .sub-menu a
+{
+    left: 0px;
+}
+.menu .sub-menu .sub-menu
+{
+    left: 170px;
+    top: -15px;
+    height: 345px;
+    width: 150px;
+}
+.menu li:hover >.sub-menu
+{
+    display: block;
+}
+.menu .sub-menu li:hover >a
+{
+    background-color: #55595c;
+    color: #fff;
+}
+.menu >li:hover>a::before
+{
+    width: 100%;
+}
+.menu .sub-menu .sub-menu
+{
+    width: 170px;
+}
+.menu .sub-menu .sub-menu .sub-menu
+{
+    width: 210px;
+}
+.menu .sub-menu :first-child
+{
+    margin-top: -15px;
+}
+.menu .sub-menu :nth-child(2)
+{
+    margin-top: 15px;
+}
+.menu .sub-menu :nth-child(3)
+{
+    margin-top: 15px;
+}
+.menu .sub-menu :nth-child(4)
+{
+    margin-top: 15px;
+}
+.menu .sub-menu :nth-child(5)
+{
+    margin-top: 15px;
+}
+.menu .sub-menu :nth-child(6)
+{
+    margin-top: 15px;
+}
+.menu .sub-menu :nth-child(7)
+{
+    margin-top: 15px;
+}
+.menu .sub-menu :nth-child(8)
+{
+    margin-top: 15px;
+}
+.slider
+{
+  padding: 95px 0;
+}
+.slider-content-center-top
+{
+    height: 350px;
+    width: 1200px;
+    margin-top: 75px;
+    display: flex;
+    
+    justify-content: center;
+}
+.slider-content-center-top img
+{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.slider-content-center-bottom
+{
+    display: flex;
+    justify-content: center;
+    width: 100px;
+    list-style: none;
+    margin-top: 20px;
+}
+.slider-content-center-bottom li
+{
+    cursor: pointer;
+}
+.slider-content-btn
+{
+    position: absolute;
+    top: 45%;
+    display: flex;
+    justify-content: space-between;
+    width: 150%;
+}
+.slider-content-btn i
+{
+    color: floralwhite;
+    font-size: 32px;
+    height: 33px;
+    width: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
