@@ -4,9 +4,989 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="/CSS/laptop.css">
+    <link rel="stylesheet" href="/CSS/bootstrap.min.css">
+    <script src="/JS/jquery-3.6.4.min.js"></script>
+    <script src="/JS/bootstrap.min.js"></script>
+    <script src="https://kit.fontawesome.com/1f63977a4e.js" crossorigin="anonymous"></script>
+    <script src="/JS/laptop.js"></script>
+    <title>Project</title>
 </head>
 <body>
+    <div class="wrapper">
+    <div class="header">
+        <nav class="top">
+           <div class="container">
+                <ul class ="top-menu">
+                    <li><a href=""><img src="/IMG/logo.png" alt=""></a></li>
+                    <div class="nut">
+                        <input type="text" class="input" placeholder="Bạn cần tìm sản phẩm gì?" name="name">
+                    </div>
+                    <button class="button">
+                        <i class="fa-sharp fa-solid fa-magnifying-glass" style="color: #f7f7f7;"></i>
+                    </button> 
+                    <button class="shop">
+                        <i class="fa-solid fa-bag-shopping"></i>
+                    </button>
+                    <li><a href=""></a></li>
+                </ul>
+           </div>
+        </nav>
+        <div class="content">
+            <ul class="menu">
+                <li class="laptop"><a href="">Laptop</a>
+                    <ul class="sub-menu" style="height: 375px;">
+                        <li><a href="">Laptop Acer</a>
+                            <ul class="sub-menu" style="height: 230px; width: 100px;">
+                                <li><a href="">Aspire 7</a></li>
+                                <li><a href="">Nitro 5</a></li>
+                                <li><a href="">Helios</a></li>
+                                <li><a href="">Triton</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="">Laptop Asus</a>
+                            <ul class="sub-menu" style="height: 230px;">
+                                <li><a href="">TUF Series</a></li>
+                                <li><a href="">TUF Gaming</a></li>
+                                <li><a href="">ROG Series</a>
+                                    <ul class="sub-menu" style="height: 173px; width: 100px;">
+                                        <li><a href="">Strix G</a></li>
+                                        <li><a href="">Zephyrus</a></li>
+                                        <li><a href="">Scar</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="">Văn Phòng</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="">Laptop Lenovo</a>
+                            <ul class="sub-menu" style="height: 173px;">
+                                <li><a href="">Ideapad Gaming</a></li>
+                                <li><a href="">Legion Gaming</a></li>
+                                <li><a href="">Văn Phòng</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="">Laptop MSI</a>
+                            <ul class="sub-menu" style="height: 413px;">
+                                <li><a href="">Alpha</a></li>
+                                <li><a href="">Cyborg Series</a></li>
+                                <li><a href="">Katana Series</a></li>
+                                <li><a href="">GF Series</a></li>
+                                <li><a href="">GL Series</a></li>
+                                <li><a href="">GP Series</a></li>
+                                <li><a href="">GE Series</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="">Laptop Gigabyte</a>
+                            <ul class="sub-menu" style="height: 173px;">
+                                <li><a href="">G5 Series</a></li>
+                                <li><a href="">Aorus</a></li>
+                                <li><a href="">Aero</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="">Laptop HP</a>
+                            <ul class="sub-menu" style="height: 173px;">
+                                <li><a href="">Victus</a></li>
+                                <li><a href="">Omen</a></li>
+                                <li><a href="">Envy</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li><a href="">Xgear PC</a>
+                    <ul class="sub-menu" style="height: 375px;">
+                        <li><a href="">Tự chọn cấu hình</a></li>
+                        <li><a href="">Mini PC</a></li>
+                        <li><a href="">PC Gen 13</a></li>
+                        <li><a href="">PC Gaming</a></li>
+                        <li><a href="">PC Gigabyte</a></li>
+                        <li><a href="">PC Gamming</a></li>
+                    </ul>
+                </li>
+                <li><a href="">Màn hình</a>
+                    <ul class="sub-menu" style="height: 173px; width: 180px;">
+                        <li><a href="">Màn hình theo hãng</a>
+                            <ul class="sub-menu" style="height: 403px;">
+                                <li><a href="">Màn hình Acer</a></li>
+                                <li><a href="">Màn hình Asus</a></li>
+                                <li><a href="">Màn hình Dell</a></li>
+                                <li><a href="">Màn hình Gigabyte</a></li>
+                                <li><a href="">Màn hình MSI</a></li>
+                                <li><a href="">Màn hình Philips</a></li>
+                                <li><a href="">Màn hình Samsung</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="">Màn hình Gaming</a>
+                        <li><a href="">Màn hình đồ họa</a>
+                    </ul>
+                </li>
+                <li><a href="">Linh kiện</a>
+                    <ul class="sub-menu" style="height: 375px;">
+                        <li><a href="">CPU</a>
+                            <ul class="sub-menu"style="height: 115px;">
+                                <li><a href="">CPU AMD</a>
+                                    <ul class="sub-menu"style="height: 115px;">
+                                        <li><a href="">Ryzen 5000 Series</a></li>
+                                        <li><a href="">Ryzen 7000 Series</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="">CPU Intel</a>
+                                    <ul class="sub-menu"style="height: 115px;">
+                                        <li><a href="">Intel 12th</a></li>
+                                        <li><a href="">Intel 13th</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li><a href="">Mainboard</a>
+                            <ul class="sub-menu" style="height: 173px;">
+                                <li><a href="">Mainboard Gigabyte</a>
+                                    <ul class="sub-menu" style="height: 115px;">
+                                        <li><a href="">Mainboard Gigabyte ADM</a></li>
+                                        <li><a href="">Mainboard Gigabyte Intel</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="">Mainboard Asus</a>
+                                    <ul class="sub-menu" style="height: 115px;">
+                                        <li><a href="">Mainboard Asus ADM</a></li>
+                                        <li><a href="">Mainboard Asus Intel</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="">Mainboard MSI</a>
+                                    <ul class="sub-menu" style="height: 115px;">
+                                        <li><a href="">Mainboard MSI ADM</a></li>
+                                        <li><a href="">Mainboard MSI Intel</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li><a href="">VGA</a>
+                            <ul class="sub-menu" style="height: 230px;">
+                                <li><a href="">VGA Gigabyte</a>
+                                    <ul class="sub-menu" style="height: 288px;">
+                                        <li><a href="">VGA Gigabyte GTX</a></li>
+                                        <li><a href="">VGA Gigabyte RTX 2000</a></li>
+                                        <li><a href="">VGA Gigabyte RTX 3000</a></li>
+                                        <li><a href="">VGA Gigabyte RTX 4000</a></li>
+                                        <li><a href="">VGA Gigabyte Radeon</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="">VGA Asus</a>
+                                    <ul class="sub-menu" style="height: 230px;">
+                                        <li><a href="">VGA Asus GTX</a></li>
+                                        <li><a href="">VGA Asus RTX 2000</a></li>
+                                        <li><a href="">VGA Asus RTX 3000</a></li>
+                                        <li><a href="">VGA Asus RTX 4000</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="">VGA MSI</a>
+                                    <ul class="sub-menu" style="height: 288px;">
+                                        <li><a href="">VGA MSI GTX</a></li>
+                                        <li><a href="">VGA MSI RTX 2000</a></li>
+                                        <li><a href="">VGA MSI RTX 3000</a></li>
+                                        <li><a href="">VGA MSI RTX 4000</a></li>
+                                        <li><a href="">VGA MSI Radeon</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="">VGA Intel</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="">RAM</a>
+                            <ul class="sub-menu" style="height: 115px;">
+                                <li><a href="">RAM Laptop</a></li>
+                                <li><a href="">RAM PC</a>
+                                    <ul class="sub-menu" style="height: 288px;">
+                                        <li><a href="">RAM Corsair</a></li>
+                                        <li><a href="">RAM G.skill</a></li>
+                                        <li><a href="">RAM Gigabyte</a></li>
+                                        <li><a href="">RAM Kingston</a></li>
+                                        <li><a href="">RAM TeamGroup</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li><a href="">SSD</a>
+                            <ul class="sub-menu" style="height: 250px;">
+                                <li><a href="">SSD 120GB-128GB</a></li>
+                                <li><a href="">SSD 250GB-256GB</a></li>
+                                <li><a href="">SSD 500GB-512GB</a></li>
+                                <li><a href="">SSD 1T-2T</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="">HDD</a>
+                            <ul class="sub-menu" style="height: 115px;">
+                                <li><a href="">HDD Laptop</a></li>
+                                <li><a href="">HDD PC</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li><a href="">Gaming Gear</a>
+                    <ul class="sub-menu">
+                        <li><a href="">Bàn Phím</a>
+                            <ul class="sub-menu">
+                                <li><a href="">Bàn Phím iKBC</a></li>
+                                <li><a href="">Bàn Phím Akko</a></li>
+                                <li><a href="">Bàn Phím Asus</a></li>
+                                <li><a href="">Bàn Phím Logitech</a></li>
+                                <li><a href="">Bàn Phím Razer</a></li>
+                                <li><a href="">Bàn Phím Havit</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="">Chuột</a>
+                            <ul class="sub-menu">
+                                <li><a href="">Chuột iKBC</a></li>
+                                <li><a href="">Chuột Akko</a></li>
+                                <li><a href="">Chuột Asus</a></li>
+                                <li><a href="">Chuột Logitech</a></li>
+                                <li><a href="">Chuột Razer</a></li>
+                                <li><a href="">Chuột Havit</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="">Tai Nghe</a>
+                            <ul class="sub-menu">
+                                <li><a href="">Tai Nghe HyperX</a></li>
+                                <li><a href="">Tai Nghe Rappo</a></li>
+                                <li><a href="">Tai Nghe Asus</a></li>
+                                <li><a href="">Tai Nghe Logitech</a></li>
+                                <li><a href="">Tai Nghe Razer</a></li>
+                                <li><a href="">Tai Nghe Havit</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="">Lót Chuột</a>
+                            <ul class="sub-menu">
+                                <li><a href="">Lót Chuột HyperX</a></li>
+                                <li><a href="">Lót Chuột Rappo</a></li>
+                                <li><a href="">Lót Chuột Asus</a></li>
+                                <li><a href="">Lót Chuột Logitech</a></li>
+                                <li><a href="">Lót Chuột Razer</a></li>
+                                <li><a href="">Lót Chuột Havit</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="">Microphone</a>
+                            <ul class="sub-menu" style="height: 114.5px;">
+                                <li><a href="">Microphone HyperX</a></li>
+                                <li><a href="">Microphone Razen</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="">Loa</a></li>
+                    </ul>
+                </li>
+                <li><a href="">Phụ kiện</a>
+                    <ul class="sub-menu" style="height: 173px;">
+                        <li><a href="">Đế tản nhiệt</a></li>
+                        <li><a href="">Phụ kiện PC</a></li>
+                        <li><a href="">Thiết bị mạng</a></li>
+                    </ul>
+                </li>
+                <li><a href="">Bàn/Ghế</a>
+                    <ul class="sub-menu" style="height: 115px;">
+                        <li><a href="">Ghế Gaming</a></li>
+                        <li><a href="">Bàn Gaming</a></li>
+                    </ul>
+                </li>
+                <li><a href="">Apple</a></li>
+                <li><a href="">Tự chọn cấu hình PC</a></li>
+            </ul>
+        </div>
+    </div>
+    <div>
+    <section class="banner">
+        <div class="container">
+            <p>Laptop</p>
+            <div class="menu-con">
+                <ul class="menu-con-con">
+                    <li><a href="">laptop Acer</a></li>
+                    <li><a href="">Laptop Asus</a></li>
+                    <li><a href="">Laptop Dell</a></li>
+                    <li><a href="">Laptop Gigabyte</a></li>
+                    <li><a href="">Laptop HP</a></li>
+                    <li><a href="">Laptop Lenovo</a></li>
+                    <li><a href="">Laptop MSI</a></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    </div>
+    <div class="loc" style="position: absolute; margin-top: 16.5%; display: flex; width: 100%;">
+        <div class="right" style="position: absolute ;right: 5%;">
+            <select name="orderby" id="orderby" aria-label="Đơn giá của cửa hàng" style="height: 40px; width: 100%;">
+                <option value="popularity">Thứ tự mức phổ biến</option>
+                <option value="rating">Thứ tự theo điểm đánh giá</option>
+                <option value="date">Mới nhất</option>
+                <option value="price" selected="selected">Thứ tự theo giá: thấp đến cao</option>
+            </select>
+        </div>
+        <div class="left" style="position: absolute; left:5%;">
+            <p>Hiện thị 1-12</p>
+        </div>
+    </div>
+    <section class="slider">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="card" style="width: 17rem;">
+                        <a href=""><img class="card-img-top" src="/IMG/1.jpg" alt="Card image cap"></a>
+                        <div class="card-body">
+                            <div class="sell">
+                                3%
+                            </div>
+                          <h5 class="card-title">Laptop MSI Modern 14 C7M 083VN AMD Ryzen 5 7530U 8GB 512GB 14″ FHD IPS Backlight Keyboard Win 11</h5>
+                          <div class="tien">
+                            <h6 class="monney-goc"> <del>14,490,000<u>đ</u></del></h6>
+                            <h6 class="monney"> 13,990,00 <u>đ</u></h6>
+                          </div>
+                            <div class="show">
+                                <div class="row">
+                                    <div class="col-md-6" style="display: flex;">
+                                        <img src="/IMG/chip.png" alt="">
+                                        <p>R5 7530U</p>
+                                    </div>
+                                    <div class="col-md-6" style="display: flex;margin-left: -6px;">
+                                        <img src="/IMG/card.png" alt="">
+                                        <p>GTX 1650</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6" style="display: flex;margin-left: 2.5px;">
+                                        <img src="/IMG/icon3.png" alt="">
+                                        <p>DDR4 8GB</p>
+                                    </div>
+                                    <div class="col-md-6" style="display: flex; margin-left: -15px;">
+                                        <img src="/IMG/icon4.png" alt="">
+                                        <p>512GB</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6" style="display: flex;">
+                                        <img src="/IMG/icon5.png" alt="">
+                                        <p>24 tháng</p>
+                                    </div>
+                                    <div class="col-md-6" style="display: flex;">
+                                        <img src="/IMG/icon6.png" alt="">
+                                        <p>14" FHD IPS</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                      </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card" style="width: 17rem;">
+                        <a href=""><img class="card-img-top" src="/IMG/2.png" alt="Card image cap"></a>
+                        <div class="card-body">
+                            <div class="sell">
+                                3%
+                            </div>
+                          <h5 class="card-title">Laptop MSI Modern 14 C13M Intel Core i3 1315U 8GB 512GB 14″ FHD IPS Backlight Keyboard Win 11</h5>
+                          <div class="tien">
+                            <h6 class="monney-goc"> <del>14,490,000<u>đ</u></del></h6>
+                            <h6 class="monney"> 13,990,00 <u>đ</u></h6>
+                          </div>
+                            <div class="show">
+                                <div class="row">
+                                    <div class="col-md-6" style="display: flex;">
+                                        <img src="/IMG/chip.png" alt="">
+                                        <p>R5 7530U</p>
+                                    </div>
+                                    <div class="col-md-6" style="display: flex;margin-left: -6px;">
+                                        <img src="/IMG/card.png" alt="">
+                                        <p>GTX 1650</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6" style="display: flex;margin-left: 2.5px;">
+                                        <img src="/IMG/icon3.png" alt="">
+                                        <p>DDR4 8GB</p>
+                                    </div>
+                                    <div class="col-md-6" style="display: flex; margin-left: -15px;">
+                                        <img src="/IMG/icon4.png" alt="">
+                                        <p>512GB</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6" style="display: flex;">
+                                        <img src="/IMG/icon5.png" alt="">
+                                        <p>24 tháng</p>
+                                    </div>
+                                    <div class="col-md-6" style="display: flex;">
+                                        <img src="/IMG/icon6.png" alt="">
+                                        <p>14" FHD IPS</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                      </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card" style="width: 17rem;">
+                        <img class="card-img-top" src="/IMG/3.jpg" alt="Card image cap">
+                        <div class="card-body">
+                            <div class="sell">
+                                3%
+                            </div>
+                          <h5 class="card-title">Laptop MSI Modern 15 B7M 099VN AMD Ryzen 5 7530U 8GB 512GB 15.6″ FHD IPS Backlight Keyboard Win 11</h5>
+                          <div class="tien">
+                            <h6 class="monney-goc"> <del>14,490,000<u>đ</u></del></h6>
+                            <h6 class="monney"> 13,990,00 <u>đ</u></h6>
+                          </div>
+                            <div class="show">
+                                <div class="row">
+                                    <div class="col-md-6" style="display: flex;">
+                                        <img src="/IMG/chip.png" alt="">
+                                        <p>R5 7530U</p>
+                                    </div>
+                                    <div class="col-md-6" style="display: flex;margin-left: -6px;">
+                                        <img src="/IMG/card.png" alt="">
+                                        <p>GTX 1650</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6" style="display: flex;margin-left: 2.5px;">
+                                        <img src="/IMG/icon3.png" alt="">
+                                        <p>DDR4 8GB</p>
+                                    </div>
+                                    <div class="col-md-6" style="display: flex; margin-left: -15px;">
+                                        <img src="/IMG/icon4.png" alt="">
+                                        <p>512GB</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6" style="display: flex;">
+                                        <img src="/IMG/icon5.png" alt="">
+                                        <p>24 tháng</p>
+                                    </div>
+                                    <div class="col-md-6" style="display: flex;">
+                                        <img src="/IMG/icon6.png" alt="">
+                                        <p>14" FHD IPS</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                      </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card" style="width: 17rem;">
+                        <img class="card-img-top" src="/IMG/4,1..jpg" alt="Card image cap">
+                        <div class="card-body">
+                            <div class="sell">
+                                3%
+                            </div>
+                          <h5 class="card-title">Laptop Gaming Acer Aspire 7 A715-42G-R05G GTX 1650 4GB Ryzen 5 5500U 8GB 512GB 15.6 FHD 144Hz IPS</h5>
+                          <div class="tien">
+                            <h6 class="monney-goc"> <del>14,490,000<u>đ</u></del></h6>
+                            <h6 class="monney"> 13,990,00 <u>đ</u></h6>
+                          </div>
+                            <div class="show">
+                                <div class="row">
+                                    <div class="col-md-6" style="display: flex;">
+                                        <img src="/IMG/chip.png" alt="">
+                                        <p>R5 7530U</p>
+                                    </div>
+                                    <div class="col-md-6" style="display: flex;margin-left: -6px;">
+                                        <img src="/IMG/card.png" alt="">
+                                        <p>GTX 1650</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6" style="display: flex;margin-left: 2.5px;">
+                                        <img src="/IMG/icon3.png" alt="">
+                                        <p>DDR4 8GB</p>
+                                    </div>
+                                    <div class="col-md-6" style="display: flex; margin-left: -15px;">
+                                        <img src="/IMG/icon4.png" alt="">
+                                        <p>512GB</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6" style="display: flex;">
+                                        <img src="/IMG/icon5.png" alt="">
+                                        <p>24 tháng</p>
+                                    </div>
+                                    <div class="col-md-6" style="display: flex;">
+                                        <img src="/IMG/icon6.png" alt="">
+                                        <p>14" FHD IPS</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                      </div>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="card" style="width: 17rem;">
+                        <img class="card-img-top" src="/IMG/1.jpg" alt="Card image cap">
+                        <div class="card-body">
+                            <div class="sell">
+                                3%
+                            </div>
+                          <h5 class="card-title">Laptop MSI Modern 14 C7M 083VN AMD Ryzen 5 7530U 8GB 512GB 14″ FHD IPS Backlight Keyboard Win 11</h5>
+                          <div class="tien">
+                            <h6 class="monney-goc"> <del>14,490,000<u>đ</u></del></h6>
+                            <h6 class="monney"> 13,990,00 <u>đ</u></h6>
+                          </div>
+                            <div class="show">
+                                <div class="row">
+                                    <div class="col-md-6" style="display: flex;">
+                                        <img src="/IMG/chip.png" alt="">
+                                        <p>R5 7530U</p>
+                                    </div>
+                                    <div class="col-md-6" style="display: flex;margin-left: -6px;">
+                                        <img src="/IMG/card.png" alt="">
+                                        <p>GTX 1650</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6" style="display: flex;margin-left: 2.5px;">
+                                        <img src="/IMG/icon3.png" alt="">
+                                        <p>DDR4 8GB</p>
+                                    </div>
+                                    <div class="col-md-6" style="display: flex; margin-left: -15px;">
+                                        <img src="/IMG/icon4.png" alt="">
+                                        <p>512GB</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6" style="display: flex;">
+                                        <img src="/IMG/icon5.png" alt="">
+                                        <p>24 tháng</p>
+                                    </div>
+                                    <div class="col-md-6" style="display: flex;">
+                                        <img src="/IMG/icon6.png" alt="">
+                                        <p>14" FHD IPS</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                      </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card" style="width: 17rem;">
+                        <img class="card-img-top" src="/IMG/2.png" alt="Card image cap">
+                        <div class="card-body">
+                            <div class="sell">
+                                3%
+                            </div>
+                          <h5 class="card-title">Laptop MSI Modern 14 C13M Intel Core i3 1315U 8GB 512GB 14″ FHD IPS Backlight Keyboard Win 11</h5>
+                          <div class="tien">
+                            <h6 class="monney-goc"> <del>14,490,000<u>đ</u></del></h6>
+                            <h6 class="monney"> 13,990,00 <u>đ</u></h6>
+                          </div>
+                            <div class="show">
+                                <div class="row">
+                                    <div class="col-md-6" style="display: flex;">
+                                        <img src="/IMG/chip.png" alt="">
+                                        <p>R5 7530U</p>
+                                    </div>
+                                    <div class="col-md-6" style="display: flex;margin-left: -6px;">
+                                        <img src="/IMG/card.png" alt="">
+                                        <p>GTX 1650</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6" style="display: flex;margin-left: 2.5px;">
+                                        <img src="/IMG/icon3.png" alt="">
+                                        <p>DDR4 8GB</p>
+                                    </div>
+                                    <div class="col-md-6" style="display: flex; margin-left: -15px;">
+                                        <img src="/IMG/icon4.png" alt="">
+                                        <p>512GB</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6" style="display: flex;">
+                                        <img src="/IMG/icon5.png" alt="">
+                                        <p>24 tháng</p>
+                                    </div>
+                                    <div class="col-md-6" style="display: flex;">
+                                        <img src="/IMG/icon6.png" alt="">
+                                        <p>14" FHD IPS</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                      </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card" style="width: 17rem;">
+                        <img class="card-img-top" src="/IMG/3.jpg" alt="Card image cap">
+                        <div class="card-body">
+                            <div class="sell">
+                                3%
+                            </div>
+                          <h5 class="card-title">Laptop MSI Modern 15 B7M 099VN AMD Ryzen 5 7530U 8GB 512GB 15.6″ FHD IPS Backlight Keyboard Win 11</h5>
+                          <div class="tien">
+                            <h6 class="monney-goc"> <del>14,490,000<u>đ</u></del></h6>
+                            <h6 class="monney"> 13,990,00 <u>đ</u></h6>
+                          </div>
+                            <div class="show">
+                                <div class="row">
+                                    <div class="col-md-6" style="display: flex;">
+                                        <img src="/IMG/chip.png" alt="">
+                                        <p>R5 7530U</p>
+                                    </div>
+                                    <div class="col-md-6" style="display: flex;margin-left: -6px;">
+                                        <img src="/IMG/card.png" alt="">
+                                        <p>GTX 1650</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6" style="display: flex;margin-left: 2.5px;">
+                                        <img src="/IMG/icon3.png" alt="">
+                                        <p>DDR4 8GB</p>
+                                    </div>
+                                    <div class="col-md-6" style="display: flex; margin-left: -15px;">
+                                        <img src="/IMG/icon4.png" alt="">
+                                        <p>512GB</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6" style="display: flex;">
+                                        <img src="/IMG/icon5.png" alt="">
+                                        <p>24 tháng</p>
+                                    </div>
+                                    <div class="col-md-6" style="display: flex;">
+                                        <img src="/IMG/icon6.png" alt="">
+                                        <p>14" FHD IPS</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                      </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card" style="width: 17rem;">
+                        <img class="card-img-top" src="/IMG/4,1..jpg" alt="Card image cap">
+                        <div class="card-body">
+                            <div class="sell">
+                                3%
+                            </div>
+                          <h5 class="card-title">Laptop Gaming Acer Aspire 7 A715-42G-R05G GTX 1650 4GB Ryzen 5 5500U 8GB 512GB 15.6 FHD 144Hz IPS</h5>
+                          <div class="tien">
+                            <h6 class="monney-goc"> <del>14,490,000<u>đ</u></del></h6>
+                            <h6 class="monney"> 13,990,00 <u>đ</u></h6>
+                          </div>
+                            <div class="show">
+                                <div class="row">
+                                    <div class="col-md-6" style="display: flex;">
+                                        <img src="/IMG/chip.png" alt="">
+                                        <p>R5 7530U</p>
+                                    </div>
+                                    <div class="col-md-6" style="display: flex;margin-left: -6px;">
+                                        <img src="/IMG/card.png" alt="">
+                                        <p>GTX 1650</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6" style="display: flex;margin-left: 2.5px;">
+                                        <img src="/IMG/icon3.png" alt="">
+                                        <p>DDR4 8GB</p>
+                                    </div>
+                                    <div class="col-md-6" style="display: flex; margin-left: -15px;">
+                                        <img src="/IMG/icon4.png" alt="">
+                                        <p>512GB</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6" style="display: flex;">
+                                        <img src="/IMG/icon5.png" alt="">
+                                        <p>24 tháng</p>
+                                    </div>
+                                    <div class="col-md-6" style="display: flex;">
+                                        <img src="/IMG/icon6.png" alt="">
+                                        <p>14" FHD IPS</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                      </div>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="card" style="width: 17rem;">
+                        <img class="card-img-top" src="/IMG/1.jpg" alt="Card image cap">
+                        <div class="card-body">
+                            <div class="sell">
+                                3%
+                            </div>
+                          <h5 class="card-title">Laptop MSI Modern 14 C7M 083VN AMD Ryzen 5 7530U 8GB 512GB 14″ FHD IPS Backlight Keyboard Win 11</h5>
+                          <div class="tien">
+                            <h6 class="monney-goc"> <del>14,490,000<u>đ</u></del></h6>
+                            <h6 class="monney"> 13,990,00 <u>đ</u></h6>
+                          </div>
+                            <div class="show">
+                                <div class="row">
+                                    <div class="col-md-6" style="display: flex;">
+                                        <img src="/IMG/chip.png" alt="">
+                                        <p>R5 7530U</p>
+                                    </div>
+                                    <div class="col-md-6" style="display: flex;margin-left: -6px;">
+                                        <img src="/IMG/card.png" alt="">
+                                        <p>GTX 1650</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6" style="display: flex;margin-left: 2.5px;">
+                                        <img src="/IMG/icon3.png" alt="">
+                                        <p>DDR4 8GB</p>
+                                    </div>
+                                    <div class="col-md-6" style="display: flex; margin-left: -15px;">
+                                        <img src="/IMG/icon4.png" alt="">
+                                        <p>512GB</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6" style="display: flex;">
+                                        <img src="/IMG/icon5.png" alt="">
+                                        <p>24 tháng</p>
+                                    </div>
+                                    <div class="col-md-6" style="display: flex;">
+                                        <img src="/IMG/icon6.png" alt="">
+                                        <p>14" FHD IPS</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                      </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card" style="width: 17rem;">
+                        <img class="card-img-top" src="/IMG/2.png" alt="Card image cap">
+                        <div class="card-body">
+                            <div class="sell">
+                                3%
+                            </div>
+                          <h5 class="card-title">Laptop MSI Modern 14 C13M Intel Core i3 1315U 8GB 512GB 14″ FHD IPS Backlight Keyboard Win 11</h5>
+                          <div class="tien">
+                            <h6 class="monney-goc"> <del>14,490,000<u>đ</u></del></h6>
+                            <h6 class="monney"> 13,990,00 <u>đ</u></h6>
+                          </div>
+                            <div class="show">
+                                <div class="row">
+                                    <div class="col-md-6" style="display: flex;">
+                                        <img src="/IMG/chip.png" alt="">
+                                        <p>R5 7530U</p>
+                                    </div>
+                                    <div class="col-md-6" style="display: flex;margin-left: -6px;">
+                                        <img src="/IMG/card.png" alt="">
+                                        <p>GTX 1650</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6" style="display: flex;margin-left: 2.5px;">
+                                        <img src="/IMG/icon3.png" alt="">
+                                        <p>DDR4 8GB</p>
+                                    </div>
+                                    <div class="col-md-6" style="display: flex; margin-left: -15px;">
+                                        <img src="/IMG/icon4.png" alt="">
+                                        <p>512GB</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6" style="display: flex;">
+                                        <img src="/IMG/icon5.png" alt="">
+                                        <p>24 tháng</p>
+                                    </div>
+                                    <div class="col-md-6" style="display: flex;">
+                                        <img src="/IMG/icon6.png" alt="">
+                                        <p>14" FHD IPS</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                      </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card" style="width: 17rem;">
+                        <img class="card-img-top" src="/IMG/3.jpg" alt="Card image cap">
+                        <div class="card-body">
+                            <div class="sell">
+                                3%
+                            </div>
+                          <h5 class="card-title">Laptop MSI Modern 15 B7M 099VN AMD Ryzen 5 7530U 8GB 512GB 15.6″ FHD IPS Backlight Keyboard Win 11</h5>
+                          <div class="tien">
+                            <h6 class="monney-goc"> <del>14,490,000<u>đ</u></del></h6>
+                            <h6 class="monney"> 13,990,00 <u>đ</u></h6>
+                          </div>
+                            <div class="show">
+                                <div class="row">
+                                    <div class="col-md-6" style="display: flex;">
+                                        <img src="/IMG/chip.png" alt="">
+                                        <p>R5 7530U</p>
+                                    </div>
+                                    <div class="col-md-6" style="display: flex;margin-left: -6px;">
+                                        <img src="/IMG/card.png" alt="">
+                                        <p>GTX 1650</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6" style="display: flex;margin-left: 2.5px;">
+                                        <img src="/IMG/icon3.png" alt="">
+                                        <p>DDR4 8GB</p>
+                                    </div>
+                                    <div class="col-md-6" style="display: flex; margin-left: -15px;">
+                                        <img src="/IMG/icon4.png" alt="">
+                                        <p>512GB</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6" style="display: flex;">
+                                        <img src="/IMG/icon5.png" alt="">
+                                        <p>24 tháng</p>
+                                    </div>
+                                    <div class="col-md-6" style="display: flex;">
+                                        <img src="/IMG/icon6.png" alt="">
+                                        <p>14" FHD IPS</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                      </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card" style="width: 17rem;">
+                        <img class="card-img-top" src="/IMG/4,1..jpg" alt="Card image cap">
+                        <div class="card-body">
+                            <div class="sell">
+                                3%
+                            </div>
+                          <h5 class="card-title">Laptop Gaming Acer Aspire 7 A715-42G-R05G GTX 1650 4GB Ryzen 5 5500U 8GB 512GB 15.6 FHD 144Hz IPS</h5>
+                          <div class="tien">
+                            <h6 class="monney-goc"> <del>14,490,000<u>đ</u></del></h6>
+                            <h6 class="monney"> 13,990,00 <u>đ</u></h6>
+                          </div>
+                            <div class="show">
+                                <div class="row">
+                                    <div class="col-md-6" style="display: flex;">
+                                        <img src="/IMG/chip.png" alt="">
+                                        <p>R5 7530U</p>
+                                    </div>
+                                    <div class="col-md-6" style="display: flex;margin-left: -6px;">
+                                        <img src="/IMG/card.png" alt="">
+                                        <p>GTX 1650</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6" style="display: flex;margin-left: 2.5px;">
+                                        <img src="/IMG/icon3.png" alt="">
+                                        <p>DDR4 8GB</p>
+                                    </div>
+                                    <div class="col-md-6" style="display: flex; margin-left: -15px;">
+                                        <img src="/IMG/icon4.png" alt="">
+                                        <p>512GB</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6" style="display: flex;">
+                                        <img src="/IMG/icon5.png" alt="">
+                                        <p>24 tháng</p>
+                                    </div>
+                                    <div class="col-md-6" style="display: flex;">
+                                        <img src="/IMG/icon6.png" alt="">
+                                        <p>14" FHD IPS</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                      </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class ="footer">
+        <div class="r1" style="margin-right: 30px;">
+            <a href="https://xgear.net/"> <img src="/IMG/logoff.png" class="logo1"></a> <br>
+             <p>
+                 Được biết đến là đơn vị ủy <br>
+                 quyền bán lẻ chính thức tại Việt <br>
+                 Nam, chuyên kinh doanh các <br>
+                 sản phẩm Laptop Gaming cao <br>
+                 cấp, PC đồ họa, linh-phụ kiện,<br>
+                 thiết bị giải trí của nhiều nhãn  <br>
+                 hàng lớn như Acer, Asus, Apple,<br>
+                 Dell, HP, Lenovo, MSI, Gigabyte,<br>
+                 Razer, HyperX, Logitech,<br>
+                 Samsung…
+             </p>
+         </div>
+         <div class="r2">
+             <b>Thông tin </b>   <br><br>
+             <p>
+                <a href="https://xgear.net/gioi-thieu-so-luoc-ve-xgear/" class="rr2"> Giới thiệu</a>  <br>
+              
+                
+                <a href="  https://xgear.net/shop/ " class="rr2"> Shop </a> <br>
+                <a href="https://news.xgear.net/ " class="rr2">Xgear New </a>  <br>
+                <a href="https://xgear.net/tuyen-dung-nam-moi-co-hoi-moi-cong-viec-moi/ " class="rr2"> Tuyển dụng  </a> <br>
+                <a href=" https://xgear.net/huong-dan-thanh-toan/" class="rr2">Phương thức thanh toán  </a>  <br>
+                <a href=" https://xgear.net/tra-cuu-van-don/" class="rr2"> Tra cứu vận đơn  </a> <br> <br>
+ 
+                 <b> Giờ làm việc</b> <br><br>
+                 Thứ 2-Thứ 7: 9h00- 20h00  <br>
+                 Chủ nhật: 9h00- 19h00
+             </p>
+             <br>
+             <div class="icon">
+                 <div class="nen-icon">
+                     <a href="https://www.facebook.com/xgearvietnam" class="tt-icon" ><i class="fab fa-facebook"style="font-size:20px"  ></i></a>
+                 </div>
+                             
+                 <div class="nen-icon-insta">
+                    <a href="https://www.instagram.com/xgearvietnam/" class="tt-icon" > <i style="font-size:22px" class="fa">&#xf16d;</i> </a> 
+                 </div>     
+                 
+                 <div class="nen-icon-yt">
+                      <a href="https://www.youtube.com/channel/UCjz-OnYr9IPaQV52TGqDjrw" class="tt-icon" > <i class="fa fa-youtube-play" style="font-size:22px"></i> </a>
+                 </div>
+             </div>
+                      <a href="http://online.gov.vn/Home/WebDetails/85783?AspxAutoDetectCookieSupport=1" class="tt-icon" > <img src="/IMG/bo-cong-thuong.png" class="bct" ></a>
+         </div>
+             
+         <div class="r3" style="margin-right: 20px;">
+         
+             <b>Chính sách </b>   <br><br> 
+             <P>
+                 <a href=" https://xgear.net/chinh-sach-tra-gop/" class="rr2"> Trả góp  </a> <br>
+                
+                 <a href="https://xgear.net/chinh-sach-giao-nhan-hang" class="rr2">  Giao hàng   </a> <br>
+                   
+                   <a href="https://xgear.net/chinh-sach-tra-hang/" class="rr2"> Đổi trả </a> <br>
+                   <a href="https://xgear.net/chinh-sach-bao-hanh" class="rr2">Bảo hành </a> <br>
+                   <a href="https://xgear.net/chinh-sach-bao-mat-thong-tin/" class="rr2"> Bảo mật thông tin</a> 
+                 <br> <br>
+                
+                 <b> Liên hệ</b> <br> <br>
+                 Hotline: <font color="red" class="rr3"> 028 7108 1881 – 093  <br>
+                     373 1881 <br></font>
+                 Mail:<font color="red"  class="rr3">sales@thenewxgear.com</font> <br>
+             
+             </P>
+         </div>
+         <div class="r4">
+             <b>Địa chỉ cửa hàng </b> <br> <br>
+           
+       
+         
+             <font  color="black">   <i style='font-size:24px' class='fas'>&#xf3c5;</i><span class="">
+                    08 Tự lập, Phường 4, Tân Bình, TP.HCM  </font><br>
     
+                   
+ <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d489.90636204138417!2d106.655601!3d10.792086!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x317529f13f6e8f01%3A0x3bd7fca8b2ecdd5f!2zOCBU4buxIEzhuq1wLCBQaMaw4budbmcgNCwgSOG7kyBDaMOtIE1pbmgsIFRow6BuaCBwaOG7kSBI4buTIENow60gTWluaCA3MDAwMCwgVmnhu4d0IE5hbQ!5e0!3m2!1svi!2sus!4v1681057563772!5m2!1svi!2sus" 
+ width="300" height="146" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"class="bando"></iframe>
+ <br>
+ <br>
+         <font  color="black"><i style='font-size:24px' class='fas'>&#xf3c5;</i> <span class="">
+               10A1 Ngõ 49, Linh Lang, Ba Đình, Hà Nội </font><br>
+ 
+     <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d465.49246444560436!2d105.81079!3d21.035098!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135ab70f32ee62d%3A0x198e65b8a995a239!2sXgear%20Vietnam!5e0!3m2!1svi!2sus!4v1681058029887!5m2!1svi!2sus" 
+     width="300" height="146" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="bando"></iframe>
+     <div class="r5" style="position: absolute; left: 57%;">      
+           <h6 style="font-size: 12px;"> Copyright © 2022 Xgear | All rights reserved | Chứng nhận đăng ký doanh nghiệp số : 0316898252 do sở KH và ĐT TP Hồ Chí Minh cấp.</h6>
+     </div>
+    </div>
+    </div>
 </body>
 </html>
