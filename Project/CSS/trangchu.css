@@ -1,0 +1,373 @@
+*{padding: 0; margin: 0 auto;}
+
+/* phần header */
+.container
+{
+    max-width: 100%; 
+    padding: 0; 
+    margin: 0 auto; 
+    height: 2200px;
+}
+
+.header
+{
+    background-color: #c00404; 
+    position: fixed; 
+    height: 160px; 
+    width: 100%;
+    z-index: 1;
+}
+
+.search
+{
+    /* position: relative; */
+    width: 94%;height: 36px;
+    border-radius: 7px;border: none;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    outline: none;
+    background-color: #f0ecec; 
+    padding-left: 1%;
+}
+
+.shop
+{
+    height: 41.5px;
+    width: 40px;
+    background-color: #bf0000;
+    border: none;
+    cursor: pointer;
+}
+
+.button
+{
+    width: 6%; 
+    position: absolute;
+    height: 36px; 
+    font-size: 20px;
+    background-color: black;
+    border: none;
+    border-top-right-radius: 7px; 
+    border-bottom-right-radius: 7px;
+    cursor: pointer;
+}
+
+.content
+{
+    position: relative;
+    background-color: black;
+    display: flex;
+    justify-content: space-around;
+    justify-items: center;
+    width: 99%;
+    height: 65px;
+    border-radius: 7px;
+    margin-top: 5px;
+    
+}
+
+.content .menu
+{
+    width:1100px;
+}
+
+.content .menu 
+{
+    list-style: none;
+}
+
+.menu li a
+{
+    display: block;
+    text-decoration: none;
+    color: aliceblue;
+    font-size: 17px;
+}
+
+.menu li
+{
+    position: relative;
+}
+
+.menu .sub-menu 
+{ 
+    display: none; 
+    position: absolute;
+    padding: 15px 0px;
+    list-style: none;
+    width: 160px;
+    height: 345px;
+    background-color: #fff;
+    margin-top: 10px;
+    margin-left: -10px;
+    transition: all 0.3s ease-in-out;
+}
+
+.content .menu
+{
+    display: flex;
+    justify-content: space-between;
+    justify-items: center;
+    margin-top: 20px;
+}
+
+.menu .sub-menu a
+{
+    /* margin-top: -15px; */
+    padding: 20px;
+    padding-left:20px;
+    color: black;
+    font-size: 12px; 
+}
+
+.menu >li>a
+{
+    position: relative;
+}
+
+.menu .sub-menu a
+{
+    left: 0px;
+}
+
+.menu >li>a::before 
+{
+    height: 5px;
+    width: 150%;
+    content: "";
+    background: #55595c;
+    position: absolute;
+    bottom: -10px;
+    left: -10px;
+    display: none;
+}
+
+.menu .sub-menu .sub-menu
+{
+    left: 170px;
+    top: -15px;
+    height: 345px;
+    width: 150px;
+}
+
+.menu li:hover >.sub-menu
+{
+    display: block;
+    transition-delay: 0.2s;
+}
+
+.menu >li:hover>a::before
+{
+    display: block;
+}
+
+.menu .sub-menu li > a 
+{
+    transition: all 0.3s ease-in-out;
+}
+
+.menu .sub-menu li:hover >a
+{
+    background-color: #55595c;
+    color: #fff;
+    transition-delay: 0.2s;
+}
+
+.menu .sub-menu .sub-menu
+{
+    width: 170px;
+}
+
+.menu .sub-menu .sub-menu .sub-menu
+{
+    width: 210px;
+}
+
+.menu .sub-menu :first-child
+{
+    margin-top: -15px;
+}
+
+.menu .sub-menu :nth-child(2)
+{
+    margin-top: 15px;
+}
+
+.menu .sub-menu :nth-child(3)
+{
+    margin-top: 15px;
+}
+
+.menu .sub-menu :nth-child(4)
+{
+    margin-top: 15px;
+}
+
+.menu .sub-menu :nth-child(5)
+{
+    margin-top: 15px;
+}
+
+.menu .sub-menu :nth-child(6)
+{
+    margin-top: 15px;
+}
+
+.menu .sub-menu :nth-child(7)
+{
+    margin-top: 15px;
+}
+
+.menu .sub-menu :nth-child(8)
+{
+    margin-top: 15px;
+}
+
+/* phần nội dung */
+
+.sub .container .row a>img
+{
+    border-radius: 7px;
+}
+
+.hotdeal
+{
+    margin-top: 1%;
+    width: 85%;
+    background-color: red;
+    height: 100px;
+    padding-top: 10px ;
+    border-radius: 7px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+.hotdeal .on
+{
+    background-color:#fae39b;
+    height: 80px;
+    text-align: center;
+    border-radius: 7px;
+}
+.hotdeal .on >h1
+{
+    font-size: 60px;
+}
+
+.sell
+{
+    position: absolute;
+    background-color: #00483d;
+    top: 0px;
+    width: 220px;
+    left: 0;
+    color: #e4e616;
+    text-align: center;
+    border-radius: 7px;
+}
+.price
+{
+    display: flex;
+}
+.product .monney
+{
+    color: #bf0000;
+}
+.product .card
+{
+    border-radius: 10px;
+}
+
+.card-title
+{
+    font-size: 14px;
+}
+
+.col-md-6 >p
+{
+    font-size: 12px;
+    padding-top: 5px;
+}
+.show .row
+{
+    background-color: #f0ecec;
+    width: 80%;
+    padding: 4px;
+    margin-left: 10%;
+}
+
+.show .row:hover 
+{
+    background-color: #f5f5f5;
+}
+/* làm hiệu ứng hover vào mấy thẻ bán hàng  */
+.card:hover 
+{
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+/* css menulp */
+.menulp
+{
+    position: relative;
+    background-color: #f50912;
+    display: flex;
+    justify-content: space-around;
+    justify-items: center;
+    width: 86%;
+    height: 65px;
+    border-radius: 7px;
+    margin-top: 10px;
+}
+.menulp .navbar
+{
+    list-style: none;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    justify-items: center;
+}
+.menulp .navbar li a
+{
+    display: block;
+    text-decoration: none;
+    font-size: 17px;
+    color: black;
+}
+.menulp .navbar li
+{
+    background-color: #f3f4f6;
+    height: 40px;
+    width: 11%;
+    text-align: center;
+    border-radius: 7px;
+}
+
+/* làm hiệu ứng hover vào li sẽ thu nhỏ */
+.nav-item:hover 
+{
+    transform: scale(0.95);
+}
+
+.showpr .row
+{
+    background-color: #f0ecec;
+    width: 100%;
+    padding: 4px;
+    margin-left: 1%;
+}
+
+.showpr .row:hover 
+{
+    background-color: #f5f5f5;
+}
+
+#show-all>a
+{
+    list-style: none;
+    text-decoration: none;
+    color: black;
+}
+#show-all
+{
+    border: none;
+}
