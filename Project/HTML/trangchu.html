@@ -11,6 +11,26 @@
     <script src="https://kit.fontawesome.com/1f63977a4e.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="../CSS/trangchu.css">
 </head>
+<script>
+    $(document).ready(function(){
+       $(".shop").click(function(){
+        $("#mymodal").modal();
+       })
+    const searchInput = document.getElementById('searchInput');
+    searchInput.addEventListener('keyup', function(event) {
+    const searchText = event.target.value.toLowerCase();
+    const cards = document.querySelectorAll('.card');
+    cards.forEach(function(card) {
+        const title = card.querySelector('.card-title').textContent.toLowerCase();
+        if (title.indexOf(searchText) === -1) {
+            card.style.display = 'none';
+        } else {
+            card.style.display = 'block';
+        }
+    });
+    });
+});
+</script>
 <body>
     <div class="container">
         <!-- phần 1 -->
@@ -1052,7 +1072,721 @@
         <ul class="navbar nav">
             <li class="nav-item"><button id="show-all"><a href="#" class="nav-link"><i class="fa fa-eye"></i> Xem tất cả >></a></button></li>
         </ul>
+        <!-- phần 5 -->
+        <div class="menulp">
+            <ul class="navbar nav">
+                <li class="nav-item" style="flex-basis: 20%;height: 50px;"><a href="#" class="nav-link"><h3 style="color: crimson;">MÀN HÌNH, PC</h3></a></li>
+                <li class="nav-item" style="width: 200px;"><a href="#" class="nav-link">Màn hình Gaming</a></li>
+                <li class="nav-item" style="width: 200px;"><a href="#" class="nav-link">Màn hình đồ họa</a></li>
+                <li class="nav-item" style="width: 200px;"><a href="#" class="nav-link">PC Gaming</a></li>
+                <li class="nav-item" style="width: 200px;"><a href="#" class="nav-link">PC đồ họa</a></li>
+            </ul>
+        </div>
+        <!-- phần 5 -->
+        <div class="product" style="width: 85%; margin-top: 1%;">
+            <div class="row">
+                <div class="col-md-3 col-sm-3">
+                    <div class="card" style="width: 20rem;">
+                        <a href=""><img class="card-img-top" src="../IMG/PC1.jpg" alt="Card image cap"style="padding-top:20px; width: 300px;"></a>
+                        <div class="card-body">
+                            <div class="sell">
+                                Nâng cấp RAM chỉ 49k
+                            </div>
+                          <h5 class="card-title">PC Xgear UD5 Intel i5-12400F 16GB RTX 3060 12G 250GB SSD Nvme</h5>
+                          <div class="price">
+                            <h6><del>39,990,000<u>đ</u></del></h6>
+                            <h6 class="monney"> 36,990,000<u>đ</u></h6>
+                          </div>
+                            <div class="showpr">
+                                <div class="row">
+                                    <div class="col-md-6" style="display: flex;">
+                                        <img src="../IMG/chip.png" alt="" height="30px" width="30px">
+                                        <p>R5 7530U</p>
+                                    </div>
+                                    <div class="col-md-6" style="display: flex; margin-left: -10px;">
+                                        <img src="../IMG/card.png" alt="" height="30px" width="30px">
+                                        <p>GTX 1650</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6" style="display: flex; margin-left: 4px;">
+                                        <img src="../IMG/ram.png" alt="" height="30px" width="30px">
+                                        <p>DDR4 8GB</p>
+                                    </div>
+                                    <div class="col-md-6" style="display: flex; margin-left: -17px;">
+                                        <img src="../IMG/ssd.png" alt="" height="30px" width="30px" s>
+                                        <p>512GB</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6" style="display: flex;">
+                                        <img src="../IMG/baohanh.png" alt="" height="30px" width="30px">
+                                        <p>24 tháng</p>
+                                    </div>
+                                    <div class="col-md-6" style="display: flex;">
+                                        <img src="../IMG/manhinh.png" alt="" height="30px" width="30px">
+                                        <p>14" FHD IPS</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                      </div>
+                </div>
+                <div class="col-md-3 col-sm-3">
+                    <div class="card" style="width: 20rem;">
+                        <a href=""><img class="card-img-top" src="../IMG/PC1.jpg" alt="Card image cap"style="padding-top:20px; width: 300px;"></a>
+                        <div class="card-body">
+                            <div class="sell">
+                                Nâng cấp RAM chỉ 49k
+                            </div>
+                          <h5 class="card-title">PC Xgear UD5 Intel i5-12400F 16GB RTX 3060 12G 250GB SSD Nvme</h5>
+                          <div class="price">
+                            <h6><del>39,990,000<u>đ</u></del></h6>
+                            <h6 class="monney"> 36,990,000<u>đ</u></h6>
+                          </div>
+                            <div class="showpr">
+                                <div class="row">
+                                    <div class="col-md-6" style="display: flex;">
+                                        <img src="../IMG/chip.png" alt="" height="30px" width="30px">
+                                        <p>R5 7530U</p>
+                                    </div>
+                                    <div class="col-md-6" style="display: flex; margin-left: -10px;">
+                                        <img src="../IMG/card.png" alt="" height="30px" width="30px">
+                                        <p>GTX 1650</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6" style="display: flex; margin-left: 4px;">
+                                        <img src="../IMG/ram.png" alt="" height="30px" width="30px">
+                                        <p>DDR4 8GB</p>
+                                    </div>
+                                    <div class="col-md-6" style="display: flex; margin-left: -17px;">
+                                        <img src="../IMG/ssd.png" alt="" height="30px" width="30px" s>
+                                        <p>512GB</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6" style="display: flex;">
+                                        <img src="../IMG/baohanh.png" alt="" height="30px" width="30px">
+                                        <p>24 tháng</p>
+                                    </div>
+                                    <div class="col-md-6" style="display: flex;">
+                                        <img src="../IMG/manhinh.png" alt="" height="30px" width="30px">
+                                        <p>14" FHD IPS</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                      </div>
+                </div>
+                <div class="col-md-3 col-sm-3">
+                    <div class="card" style="width: 20rem;">
+                        <a href=""><img class="card-img-top" src="../IMG/PC1.jpg" alt="Card image cap"style="padding-top:20px; width: 300px;"></a>
+                        <div class="card-body">
+                            <div class="sell">
+                                Nâng cấp RAM chỉ 49k
+                            </div>
+                          <h5 class="card-title">PC Xgear UD5 Intel i5-12400F 16GB RTX 3060 12G 250GB SSD Nvme</h5>
+                          <div class="price">
+                            <h6><del>39,990,000<u>đ</u></del></h6>
+                            <h6 class="monney"> 36,990,000<u>đ</u></h6>
+                          </div>
+                            <div class="showpr">
+                                <div class="row">
+                                    <div class="col-md-6" style="display: flex;">
+                                        <img src="../IMG/chip.png" alt="" height="30px" width="30px">
+                                        <p>R5 7530U</p>
+                                    </div>
+                                    <div class="col-md-6" style="display: flex; margin-left: -10px;">
+                                        <img src="../IMG/card.png" alt="" height="30px" width="30px">
+                                        <p>GTX 1650</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6" style="display: flex; margin-left: 4px;">
+                                        <img src="../IMG/ram.png" alt="" height="30px" width="30px">
+                                        <p>DDR4 8GB</p>
+                                    </div>
+                                    <div class="col-md-6" style="display: flex; margin-left: -17px;">
+                                        <img src="../IMG/ssd.png" alt="" height="30px" width="30px" s>
+                                        <p>512GB</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6" style="display: flex;">
+                                        <img src="../IMG/baohanh.png" alt="" height="30px" width="30px">
+                                        <p>24 tháng</p>
+                                    </div>
+                                    <div class="col-md-6" style="display: flex;">
+                                        <img src="../IMG/manhinh.png" alt="" height="30px" width="30px">
+                                        <p>14" FHD IPS</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                      </div>
+                </div>
+                <div class="col-md-3 col-sm-3">
+                    <div class="card" style="width: 20rem;">
+                        <a href=""><img class="card-img-top" src="../IMG/PC1.jpg" alt="Card image cap"style="padding-top:20px; width: 300px;"></a>
+                        <div class="card-body">
+                            <div class="sell">
+                                Nâng cấp RAM chỉ 49k
+                            </div>
+                          <h5 class="card-title">PC Xgear UD5 Intel i5-12400F 16GB RTX 3060 12G 250GB SSD Nvme</h5>
+                          <div class="price">
+                            <h6><del>39,990,000<u>đ</u></del></h6>
+                            <h6 class="monney"> 36,990,000<u>đ</u></h6>
+                          </div>
+                            <div class="showpr">
+                                <div class="row">
+                                    <div class="col-md-6" style="display: flex;">
+                                        <img src="../IMG/chip.png" alt="" height="30px" width="30px">
+                                        <p>R5 7530U</p>
+                                    </div>
+                                    <div class="col-md-6" style="display: flex; margin-left: -10px;">
+                                        <img src="../IMG/card.png" alt="" height="30px" width="30px">
+                                        <p>GTX 1650</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6" style="display: flex; margin-left: 4px;">
+                                        <img src="../IMG/ram.png" alt="" height="30px" width="30px">
+                                        <p>DDR4 8GB</p>
+                                    </div>
+                                    <div class="col-md-6" style="display: flex; margin-left: -17px;">
+                                        <img src="../IMG/ssd.png" alt="" height="30px" width="30px" s>
+                                        <p>512GB</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6" style="display: flex;">
+                                        <img src="../IMG/baohanh.png" alt="" height="30px" width="30px">
+                                        <p>24 tháng</p>
+                                    </div>
+                                    <div class="col-md-6" style="display: flex;">
+                                        <img src="../IMG/manhinh.png" alt="" height="30px" width="30px">
+                                        <p>14" FHD IPS</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                      </div>
+                </div>
+            </div><br>
+            <div class="row">
+                <div class="col-md-3 col-sm-3">
+                    <div class="card" style="width: 20rem;">
+                        <a href=""><img class="card-img-top" src="../IMG/PC1.jpg" alt="Card image cap"style="padding-top:20px; width: 300px;"></a>
+                        <div class="card-body">
+                            <div class="sell">
+                                Nâng cấp RAM chỉ 49k
+                            </div>
+                          <h5 class="card-title">PC Xgear UD5 Intel i5-12400F 16GB RTX 3060 12G 250GB SSD Nvme</h5>
+                          <div class="price">
+                            <h6><del>39,990,000<u>đ</u></del></h6>
+                            <h6 class="monney"> 36,990,000<u>đ</u></h6>
+                          </div>
+                            <div class="showpr">
+                                <div class="row">
+                                    <div class="col-md-6" style="display: flex;">
+                                        <img src="../IMG/chip.png" alt="" height="30px" width="30px">
+                                        <p>R5 7530U</p>
+                                    </div>
+                                    <div class="col-md-6" style="display: flex; margin-left: -10px;">
+                                        <img src="../IMG/card.png" alt="" height="30px" width="30px">
+                                        <p>GTX 1650</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6" style="display: flex; margin-left: 4px;">
+                                        <img src="../IMG/ram.png" alt="" height="30px" width="30px">
+                                        <p>DDR4 8GB</p>
+                                    </div>
+                                    <div class="col-md-6" style="display: flex; margin-left: -17px;">
+                                        <img src="../IMG/ssd.png" alt="" height="30px" width="30px" s>
+                                        <p>512GB</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6" style="display: flex;">
+                                        <img src="../IMG/baohanh.png" alt="" height="30px" width="30px">
+                                        <p>24 tháng</p>
+                                    </div>
+                                    <div class="col-md-6" style="display: flex;">
+                                        <img src="../IMG/manhinh.png" alt="" height="30px" width="30px">
+                                        <p>14" FHD IPS</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                      </div>
+                </div>
+                <div class="col-md-3 col-sm-3">
+                    <div class="card" style="width: 20rem;">
+                        <a href=""><img class="card-img-top" src="../IMG/PC1.jpg" alt="Card image cap"style="padding-top:20px; width: 300px;"></a>
+                        <div class="card-body">
+                            <div class="sell">
+                                Nâng cấp RAM chỉ 49k
+                            </div>
+                          <h5 class="card-title">PC Xgear UD5 Intel i5-12400F 16GB RTX 3060 12G 250GB SSD Nvme</h5>
+                          <div class="price">
+                            <h6><del>39,990,000<u>đ</u></del></h6>
+                            <h6 class="monney"> 36,990,000<u>đ</u></h6>
+                          </div>
+                            <div class="showpr">
+                                <div class="row">
+                                    <div class="col-md-6" style="display: flex;">
+                                        <img src="../IMG/chip.png" alt="" height="30px" width="30px">
+                                        <p>R5 7530U</p>
+                                    </div>
+                                    <div class="col-md-6" style="display: flex; margin-left: -10px;">
+                                        <img src="../IMG/card.png" alt="" height="30px" width="30px">
+                                        <p>GTX 1650</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6" style="display: flex; margin-left: 4px;">
+                                        <img src="../IMG/ram.png" alt="" height="30px" width="30px">
+                                        <p>DDR4 8GB</p>
+                                    </div>
+                                    <div class="col-md-6" style="display: flex; margin-left: -17px;">
+                                        <img src="../IMG/ssd.png" alt="" height="30px" width="30px" s>
+                                        <p>512GB</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6" style="display: flex;">
+                                        <img src="../IMG/baohanh.png" alt="" height="30px" width="30px">
+                                        <p>24 tháng</p>
+                                    </div>
+                                    <div class="col-md-6" style="display: flex;">
+                                        <img src="../IMG/manhinh.png" alt="" height="30px" width="30px">
+                                        <p>14" FHD IPS</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                      </div>
+                </div>
+                <div class="col-md-3 col-sm-3">
+                    <div class="card" style="width: 20rem;">
+                        <a href=""><img class="card-img-top" src="../IMG/PC1.jpg" alt="Card image cap"style="padding-top:20px; width: 300px;"></a>
+                        <div class="card-body">
+                            <div class="sell">
+                                Nâng cấp RAM chỉ 49k
+                            </div>
+                          <h5 class="card-title">PC Xgear UD5 Intel i5-12400F 16GB RTX 3060 12G 250GB SSD Nvme</h5>
+                          <div class="price">
+                            <h6><del>39,990,000<u>đ</u></del></h6>
+                            <h6 class="monney"> 36,990,000<u>đ</u></h6>
+                          </div>
+                            <div class="showpr">
+                                <div class="row">
+                                    <div class="col-md-6" style="display: flex;">
+                                        <img src="../IMG/chip.png" alt="" height="30px" width="30px">
+                                        <p>R5 7530U</p>
+                                    </div>
+                                    <div class="col-md-6" style="display: flex; margin-left: -10px;">
+                                        <img src="../IMG/card.png" alt="" height="30px" width="30px">
+                                        <p>GTX 1650</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6" style="display: flex; margin-left: 4px;">
+                                        <img src="../IMG/ram.png" alt="" height="30px" width="30px">
+                                        <p>DDR4 8GB</p>
+                                    </div>
+                                    <div class="col-md-6" style="display: flex; margin-left: -17px;">
+                                        <img src="../IMG/ssd.png" alt="" height="30px" width="30px" s>
+                                        <p>512GB</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6" style="display: flex;">
+                                        <img src="../IMG/baohanh.png" alt="" height="30px" width="30px">
+                                        <p>24 tháng</p>
+                                    </div>
+                                    <div class="col-md-6" style="display: flex;">
+                                        <img src="../IMG/manhinh.png" alt="" height="30px" width="30px">
+                                        <p>14" FHD IPS</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                      </div>
+                </div>
+                <div class="col-md-3 col-sm-3">
+                    <div class="card" style="width: 20rem;">
+                        <a href=""><img class="card-img-top" src="../IMG/PC1.jpg" alt="Card image cap"style="padding-top:20px; width: 300px;"></a>
+                        <div class="card-body">
+                            <div class="sell">
+                                Nâng cấp RAM chỉ 49k
+                            </div>
+                          <h5 class="card-title">PC Xgear UD5 Intel i5-12400F 16GB RTX 3060 12G 250GB SSD Nvme</h5>
+                          <div class="price">
+                            <h6><del>39,990,000<u>đ</u></del></h6>
+                            <h6 class="monney"> 36,990,000<u>đ</u></h6>
+                          </div>
+                            <div class="showpr">
+                                <div class="row">
+                                    <div class="col-md-6" style="display: flex;">
+                                        <img src="../IMG/chip.png" alt="" height="30px" width="30px">
+                                        <p>R5 7530U</p>
+                                    </div>
+                                    <div class="col-md-6" style="display: flex; margin-left: -10px;">
+                                        <img src="../IMG/card.png" alt="" height="30px" width="30px">
+                                        <p>GTX 1650</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6" style="display: flex; margin-left: 4px;">
+                                        <img src="../IMG/ram.png" alt="" height="30px" width="30px">
+                                        <p>DDR4 8GB</p>
+                                    </div>
+                                    <div class="col-md-6" style="display: flex; margin-left: -17px;">
+                                        <img src="../IMG/ssd.png" alt="" height="30px" width="30px" s>
+                                        <p>512GB</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6" style="display: flex;">
+                                        <img src="../IMG/baohanh.png" alt="" height="30px" width="30px">
+                                        <p>24 tháng</p>
+                                    </div>
+                                    <div class="col-md-6" style="display: flex;">
+                                        <img src="../IMG/manhinh.png" alt="" height="30px" width="30px">
+                                        <p>14" FHD IPS</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                      </div>
+                </div>
+            </div>
+        </div><br>
+        <div class="product-list">
+            <!-- các sản phẩm -->
+        </div>
+        <ul class="navbar nav">
+            <li class="nav-item"><button id="show-all"><a href="#" class="nav-link"><i class="fa fa-eye"></i> Xem tất cả >></a></button></li>
+        </ul>
         <!-- phần 6 -->
+        <div class="menulp">
+            <ul class="navbar nav">
+                <li class="nav-item" style="flex-basis: 20%;height: 50px;"><a href="#" class="nav-link"><h3 style="color: crimson;">GAMING GEAR</h3></a></li>
+                <li class="nav-item" style="width: 200px;"><a href="#" class="nav-link">Chuột Logitech</a></li>
+                <li class="nav-item" style="width: 200px;"><a href="#" class="nav-link">Bàn phím Razer</a></li>
+                <li class="nav-item" style="width: 200px;"><a href="#" class="nav-link">Tai nghe HyperX</a></li>
+            </ul>
+        </div>
+        <!-- phần 7 -->
+        <div class="product" style="width: 85%; margin-top: 1%;">
+            <div class="row">
+                <div class="col-md-2 col-sm-2">
+                    <div class="card" style="width: 13rem;">
+                        <a href=""><img class="card-img-top" src="../IMG/tainghe1.jpg" alt="Card image cap"style="padding-top:20px;"></a>
+                        <div class="card-body">
+                          <h5 class="card-title">Tai nghe HyperX Cloud Stinger S 7.1 (4P4F1AA)</h5>
+                          <div class="price">
+                            <h6><del>1,490,000<u>đ</u></del></h6>
+                            <h6 class="monney"> 1,350,000<u>đ</u></h6>
+                          </div>
+                        </div>
+                      </div>
+                </div>
+                <div class="col-md-2 col-sm-2">
+                    <div class="card" style="width: 13rem;">
+                        <a href=""><img class="card-img-top" src="../IMG/tainghe1.jpg" alt="Card image cap"style="padding-top:20px;"></a>
+                        <div class="card-body">
+                          <h5 class="card-title">Tai nghe HyperX Cloud Stinger S 7.1 (4P4F1AA)</h5>
+                          <div class="price">
+                            <h6><del>1,490,000<u>đ</u></del></h6>
+                            <h6 class="monney"> 1,350,000<u>đ</u></h6>
+                          </div>
+                        </div>
+                      </div>
+                </div>
+                <div class="col-md-2 col-sm-2">
+                    <div class="card" style="width: 13rem;">
+                        <a href=""><img class="card-img-top" src="../IMG/tainghe1.jpg" alt="Card image cap"style="padding-top:20px;"></a>
+                        <div class="card-body">
+                          <h5 class="card-title">Tai nghe HyperX Cloud Stinger S 7.1 (4P4F1AA)</h5>
+                          <div class="price">
+                            <h6><del>1,490,000<u>đ</u></del></h6>
+                            <h6 class="monney"> 1,350,000<u>đ</u></h6>
+                          </div>
+                        </div>
+                      </div>
+                </div>
+                <div class="col-md-2 col-sm-2">
+                    <div class="card" style="width: 13rem;">
+                        <a href=""><img class="card-img-top" src="../IMG/tainghe1.jpg" alt="Card image cap"style="padding-top:20px;"></a>
+                        <div class="card-body">
+                          <h5 class="card-title">Tai nghe HyperX Cloud Stinger S 7.1 (4P4F1AA)</h5>
+                          <div class="price">
+                            <h6><del>1,490,000<u>đ</u></del></h6>
+                            <h6 class="monney"> 1,350,000<u>đ</u></h6>
+                          </div>
+                        </div>
+                      </div>
+                </div>
+                <div class="col-md-2 col-sm-2">
+                    <div class="card" style="width: 13rem;">
+                        <a href=""><img class="card-img-top" src="../IMG/tainghe1.jpg" alt="Card image cap"style="padding-top:20px;"></a>
+                        <div class="card-body">
+                          <h5 class="card-title">Tai nghe HyperX Cloud Stinger S 7.1 (4P4F1AA)</h5>
+                          <div class="price">
+                            <h6><del>1,490,000<u>đ</u></del></h6>
+                            <h6 class="monney"> 1,350,000<u>đ</u></h6>
+                          </div>
+                        </div>
+                      </div>
+                </div>
+                <div class="col-md-2 col-sm-2">
+                    <div class="card" style="width: 13rem;">
+                        <a href=""><img class="card-img-top" src="../IMG/tainghe1.jpg" alt="Card image cap"style="padding-top:20px;"></a>
+                        <div class="card-body">
+                          <h5 class="card-title">Tai nghe HyperX Cloud Stinger S 7.1 (4P4F1AA)</h5>
+                          <div class="price">
+                            <h6><del>1,490,000<u>đ</u></del></h6>
+                            <h6 class="monney"> 1,350,000<u>đ</u></h6>
+                          </div>
+                        </div>
+                      </div>
+                </div>
+            </div><br>
+            <div class="row">
+                <div class="col-md-2 col-sm-2">
+                    <div class="card" style="width: 13rem;">
+                        <a href=""><img class="card-img-top" src="../IMG/tainghe1.jpg" alt="Card image cap"style="padding-top:20px;"></a>
+                        <div class="card-body">
+                          <h5 class="card-title">Tai nghe HyperX Cloud Stinger S 7.1 (4P4F1AA)</h5>
+                          <div class="price">
+                            <h6><del>1,490,000<u>đ</u></del></h6>
+                            <h6 class="monney"> 1,350,000<u>đ</u></h6>
+                          </div>
+                        </div>
+                      </div>
+                </div>
+                <div class="col-md-2 col-sm-2">
+                    <div class="card" style="width: 13rem;">
+                        <a href=""><img class="card-img-top" src="../IMG/tainghe1.jpg" alt="Card image cap"style="padding-top:20px;"></a>
+                        <div class="card-body">
+                          <h5 class="card-title">Tai nghe HyperX Cloud Stinger S 7.1 (4P4F1AA)</h5>
+                          <div class="price">
+                            <h6><del>1,490,000<u>đ</u></del></h6>
+                            <h6 class="monney"> 1,350,000<u>đ</u></h6>
+                          </div>
+                        </div>
+                      </div>
+                </div>
+                <div class="col-md-2 col-sm-2">
+                    <div class="card" style="width: 13rem;">
+                        <a href=""><img class="card-img-top" src="../IMG/tainghe1.jpg" alt="Card image cap"style="padding-top:20px;"></a>
+                        <div class="card-body">
+                          <h5 class="card-title">Tai nghe HyperX Cloud Stinger S 7.1 (4P4F1AA)</h5>
+                          <div class="price">
+                            <h6><del>1,490,000<u>đ</u></del></h6>
+                            <h6 class="monney"> 1,350,000<u>đ</u></h6>
+                          </div>
+                        </div>
+                      </div>
+                </div>
+                <div class="col-md-2 col-sm-2">
+                    <div class="card" style="width: 13rem;">
+                        <a href=""><img class="card-img-top" src="../IMG/tainghe1.jpg" alt="Card image cap"style="padding-top:20px;"></a>
+                        <div class="card-body">
+                          <h5 class="card-title">Tai nghe HyperX Cloud Stinger S 7.1 (4P4F1AA)</h5>
+                          <div class="price">
+                            <h6><del>1,490,000<u>đ</u></del></h6>
+                            <h6 class="monney"> 1,350,000<u>đ</u></h6>
+                          </div>
+                        </div>
+                      </div>
+                </div>
+                <div class="col-md-2 col-sm-2">
+                    <div class="card" style="width: 13rem;">
+                        <a href=""><img class="card-img-top" src="../IMG/tainghe1.jpg" alt="Card image cap"style="padding-top:20px;"></a>
+                        <div class="card-body">
+                          <h5 class="card-title">Tai nghe HyperX Cloud Stinger S 7.1 (4P4F1AA)</h5>
+                          <div class="price">
+                            <h6><del>1,490,000<u>đ</u></del></h6>
+                            <h6 class="monney"> 1,350,000<u>đ</u></h6>
+                          </div>
+                        </div>
+                      </div>
+                </div>
+                <div class="col-md-2 col-sm-2">
+                    <div class="card" style="width: 13rem;">
+                        <a href=""><img class="card-img-top" src="../IMG/tainghe1.jpg" alt="Card image cap"style="padding-top:20px;"></a>
+                        <div class="card-body">
+                          <h5 class="card-title">Tai nghe HyperX Cloud Stinger S 7.1 (4P4F1AA)</h5>
+                          <div class="price">
+                            <h6><del>1,490,000<u>đ</u></del></h6>
+                            <h6 class="monney"> 1,350,000<u>đ</u></h6>
+                          </div>
+                        </div>
+                      </div>
+                </div>
+            </div><br>
+        <!-- phần 8 -->
+        <div class="product-list">
+            <!-- các sản phẩm -->
+        </div>
+        <ul class="navbar nav">
+            <li class="nav-item"><button id="show-all"><a href="#" class="nav-link"><i class="fa fa-eye"></i> Xem tất cả >></a></button></li>
+        </ul>
+        <!-- footer -->
+        <div class ="footer">
+            <div class="r1" style="margin-right: 30px;">
+                <a href="https://xgear.net/"> <img src="/IMG/logoff.png" class="logo1"></a> <br>
+                <p>
+                    Được biết đến là đơn vị ủy <br>
+                    quyền bán lẻ chính thức tại Việt <br>
+                    Nam, chuyên kinh doanh các <br>
+                    sản phẩm Laptop Gaming cao <br>
+                    cấp, PC đồ họa, linh-phụ kiện,<br>
+                    thiết bị giải trí của nhiều nhãn  <br>
+                    hàng lớn như Acer, Asus, Apple,<br>
+                    Dell, HP, Lenovo, MSI, Gigabyte,<br>
+                    Razer, HyperX, Logitech,<br>
+                    Samsung…
+                </p>
+            </div>
+            <div class="r2">
+                <b>Thông tin </b>   <br><br>
+                <p>
+                    <a href="https://xgear.net/gioi-thieu-so-luoc-ve-xgear/" class="rr2"> Giới thiệu</a>  <br>
+                    <a href="  https://xgear.net/shop/ " class="rr2"> Shop </a> <br>
+                    <a href="https://news.xgear.net/ " class="rr2">Xgear New </a>  <br>
+                    <a href="https://xgear.net/tuyen-dung-nam-moi-co-hoi-moi-cong-viec-moi/ " class="rr2"> Tuyển dụng  </a> <br>
+                    <a href=" https://xgear.net/huong-dan-thanh-toan/" class="rr2">Phương thức thanh toán  </a>  <br>
+                    <a href=" https://xgear.net/tra-cuu-van-don/" class="rr2"> Tra cứu vận đơn  </a> <br> <br>
+                    <b> Giờ làm việc</b> <br><br>
+                    Thứ 2-Thứ 7: 9h00- 20h00  <br>
+                    Chủ nhật: 9h00- 19h00
+                </p>
+                <br>
+                <div class="icon">
+                    <div class="nen-icon">
+                        <a href="https://www.facebook.com/xgearvietnam" class="tt-icon" ><i class="fab fa-facebook"style="font-size:20px"  ></i></a>
+                    </div>          
+                    <div class="nen-icon-insta">
+                        <a href="https://www.instagram.com/xgearvietnam/" class="tt-icon" ><i class="fa-brands fa-instagram"></i></a> 
+                     </div>     
+                    <div class="nen-icon-yt">
+                        <a href="https://www.youtube.com/channel/UCjz-OnYr9IPaQV52TGqDjrw" class="tt-icon" > <i class="fa fa-youtube-play" style="font-size:22px"></i> </a>
+                    </div>
+                </div>
+                <a href="http://online.gov.vn/Home/WebDetails/85783?AspxAutoDetectCookieSupport=1" class="tt-icon" > <img src="/IMG/bo-cong-thuong.png" class="bct" ></a>
+            </div>
+            <div class="r3" style="margin-right: 20px;">
+                <b>Chính sách </b><br><br> 
+                <P>
+                    <a href=" https://xgear.net/chinh-sach-tra-gop/" class="rr2"> Trả góp  </a> <br>
+                    <a href="https://xgear.net/chinh-sach-giao-nhan-hang" class="rr2">  Giao hàng   </a> <br>   
+                    <a href="https://xgear.net/chinh-sach-tra-hang/" class="rr2"> Đổi trả </a> <br>
+                    <a href="https://xgear.net/chinh-sach-bao-hanh" class="rr2">Bảo hành </a> <br>
+                    <a href="https://xgear.net/chinh-sach-bao-mat-thong-tin/" class="rr2"> Bảo mật thông tin</a> 
+                    <br> <br>
+                    <b> Liên hệ</b> <br> <br>
+                    Hotline: <font color="red" class="rr3"> 028 7108 1881 – 093<br>
+                    373 1881 <br></font>
+                    Mail:<font color="red"  class="rr3">sales@thenewxgear.com</font><br>
+                </P>
+            </div>
+            <div class="r4">
+                <b>Địa chỉ cửa hàng </b> <br> <br>
+                <font  color="black">   <i style='font-size:24px' class='fas'>&#xf3c5;</i><span class="">
+                08 Tự lập, Phường 4, Tân Bình, TP.HCM  </font><br>            
+                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d489.90636204138417!2d106.655601!3d10.792086!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x317529f13f6e8f01%3A0x3bd7fca8b2ecdd5f!2zOCBU4buxIEzhuq1wLCBQaMaw4budbmcgNCwgSOG7kyBDaMOtIE1pbmgsIFRow6BuaCBwaOG7kSBI4buTIENow60gTWluaCA3MDAwMCwgVmnhu4d0IE5hbQ!5e0!3m2!1svi!2sus!4v1681057563772!5m2!1svi!2sus" 
+                width="300" height="146" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"class="bando"></iframe><br><br>
+                <font  color="black"><i style='font-size:24px' class='fas'>&#xf3c5;</i> <span class="">
+                10A1 Ngõ 49, Linh Lang, Ba Đình, Hà Nội </font><br>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d465.49246444560436!2d105.81079!3d21.035098!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135ab70f32ee62d%3A0x198e65b8a995a239!2sXgear%20Vietnam!5e0!3m2!1svi!2sus!4v1681058029887!5m2!1svi!2sus" 
+                width="300" height="146" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="bando"></iframe>
+                <div class="r5" style="position: absolute; left: 57%;">      
+                    <h6 style="font-size: 12px;"> Copyright © 2022 Xgear | All rights reserved | Chứng nhận đăng ký doanh nghiệp số : 0316898252 do sở KH và ĐT TP Hồ Chí Minh cấp.</h6>
+                </div>
+            </div>
+        </div>
+        <!-- modal -->
+        <div class="modal fade" id="mymodal" role="dialog">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                       <div class="row">
+                        <div class="col-md-10">
+                            <h4>Đặt lịch khám online</h4>
+                        </div>
+                        <div class="col-md-2">
+                            <button type="button" class="close" data-dismiss="modal" style="margin-left: 740px;">X</button>
+                        </div>
+                       </div>
+                    </div>
+                    <div class="modal-body">
+                        <form action="" class="form-control">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <label for="">Mã bệnh nhân</label>
+                                    <input type="text" id="mbn" placeholder="Mã bệnh nhân" style="width: 100%;">
+                                    <span id="tbmbn" class="text-danger">(*)</span>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <label for="">Mật khẩu</label>
+                                    <input type="password" id="mk" placeholder="Mật khẩu" style="width: 100%;">
+                                    <span id="tbmk" class="text-danger">(*)</span>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <label for="">Ngày Khám</label>
+                                    <input type="date" id="nk" style="width: 100%;">
+                                    <span id="tbnk" class="text-danger">(*)</span>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <label for="">Loại dịch vụ</label><br>
+                                    <input type="checkbox" name="ldv" class="ldv" value="400000"> Khám theo yêu cầu
+                                    <input type="checkbox" name="ldv" class="ldv" value="600000"> Điều trị ngoại trú
+                                    <input type="checkbox" name="ldv" class="ldv" value="500000"> Bác sĩ theo yêu cầu
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <label for="">Chuyên khoa</label><br>
+                                    <select name="" id="ck" style="width: 100%;">
+                                        <option value="Ngoại tổng quát">Ngoại tổng quát</option>
+                                        <option value="Nhi">Nhi</option>
+                                        <option value="Nội tổng quát">Nội tổng quát</option>
+                                    </select>
+                                </div>
+                            </div><br>
+                            <div class="row">
+                                <div class="col-md-6"><input type="button" value="Đặt Lịch" id="save" class="btn btn-primary"></div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <input type="text" id="tiendv" class="text-hide" style="width: 100%;" disabled value="0">
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <div class="row">
+                            <div class="col-md-9"></div>
+                            <div class="col-md-4">
+                                <input type="button" value="Close" class="btn btn-primary" data-dismiss="modal">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </body>
 </html>

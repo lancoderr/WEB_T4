@@ -1,0 +1,952 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products One</title>
+    <link rel="stylesheet" href="../CSS/bootstrap.min.css">
+    <script src="../JS/jquery-3.6.1.min.js"></script>
+    <script src="../JS/bootstrap.min.js"></script>
+    <script src="https://kit.fontawesome.com/1f63977a4e.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../CSS/one.css">
+</head>
+<script>
+
+// hàm giảm số lượng sản phẩm
+function min()
+{
+    let ele = document.getElementById("number_in");
+    let min = ele.value;
+       if(min > 1){
+        min--;
+    }
+    else
+    {
+        min = min;
+    };
+    document.getElementById("number_in").value = min;
+}
+
+// hàm tăng số lượng sản phẩm
+function max()
+{
+    let ele = document.getElementById("number_in");
+    let max = ele.value;
+    max++;
+    document.getElementById("number_in").value = max;
+}
+// Hàm thanh toán chuyển khoản
+function cl2()
+{
+    var cls2 = document.querySelector("#pttt2").value;
+    var phanhoi = document.querySelector("#phanhoi");
+    phanhoi.innerHTML = 'Vui lòng chuyển khoản vào tài khoản sau:<p>Ngân hàng ACB</p>Số tài khoản 998 858 258 <p></p>';
+}
+// Hàm thanh toán tiền mặt
+function cl1()
+{
+    var cls1 = document.querySelector("#pttt1").value;
+    var phanhoi = document.querySelector("#phanhoi");
+    phanhoi.innerHTML = 'Vui lòng thanh toán khi đơn hàng được giao';
+}
+</script>
+
+<!-- dùng jquery -->
+
+<script>
+$(document).ready(function()
+{
+
+var dem_noti = 0;
+function notification()
+{
+    if(dem_noti == 0)
+    {
+        var p = document.querySelector("#notification_on p");
+        var rep_noti = document.querySelector("#notification_on");
+        var hivi = document.querySelector("#notification");
+        rep_noti.style.width = '300px';
+        hivi.style.color  = 'yellow';
+        hivi.style.border = '2px solid yellow';
+        setTimeout(() => 
+        {
+           p.style.display = 'block';
+        }, 1000);
+        rep_noti.addEventListener('click',(e) => {if(e.target == rep_noti){rep_noti.style.width = '0px';p.style.display='none';dem_noti = 0;   hivi.style.border = '2px solid white'; hivi.style.color  = 'white';}});
+        dem_noti = 1;
+    }
+    else
+    {
+        var p = document.querySelector("#notification_on p");
+        var rep_noti = document.querySelector("#notification_on");
+        var hivi = document.querySelector("#notification");
+        rep_noti.style.width = '0px';
+        p.style.display = 'none';
+        dem_noti = 0;
+        hivi.style.color  = 'white';
+        hivi.style.border = '2px solid white';
+    }
+
+}
+function hiden()
+{
+    var content = document.querySelector("#content");
+    var bt1 = document.querySelector("#an");
+    var bt2 = document.querySelector("#hien");
+    bt1.style.display = 'none';
+    bt2.style.display = 'block';
+    content.style.overflow = 'hidden';
+    content.style.height = '350px';
+    content.style.transition = 'all 1s';
+}
+function visi()
+{
+    var content = document.querySelector("#content");
+    var bt1 = document.querySelector("#an");
+    var bt2 = document.querySelector("#hien");
+    bt1.style.display = 'block';
+    bt2.style.display = 'none';
+    content.style.overflow = 'visible';
+    content.style.height = '1000px';
+    content.style.transition = 'all 0s';
+}
+
+var inputA = document.querySelector("#ThemSP");
+var datalt = localStorage.getItem('sanpham_giohang');
+if(datalt)
+{
+    var sanpham_giohang = JSON.parse(localStorage.getItem('sanpham_giohang'));
+}
+else
+{
+    var sanpham_giohang = [];
+}
+inputA.addEventListener('click', () => 
+{
+    var imgs = document.querySelector("#img_sp_l").innerHTML;
+    var tsp = document.querySelector("#tsp").innerHTML;
+    var gsp = document.querySelector("#gsp").innerHTML;
+    var soluong = document.querySelector("#number_in").value;
+    var length_price = gsp.length;
+    var price_sp = 0;
+    var pow = 1;
+    for (var i = parseInt(length_price)-2; i >= 0; i--)
+    {
+        
+        if(gsp[i] != '.')
+        {
+            if(gsp[i] == ' ')
+            {
+                break;
+            }
+            price_sp += parseInt(gsp[i]) * pow;
+          
+            pow = pow *10;
+        }
+    }
+
+    var tongtien = parseInt(price_sp)*parseInt(soluong);
+    additems(imgs,tsp,price_sp,soluong,tongtien);
+    localStorage.setItem('sanpham_giohang',JSON.stringify(sanpham_giohang));
+});
+
+// hàm
+var inputB = document.querySelector("#BuySp");
+inputB.addEventListener('click', () => 
+{
+    var credit = document.querySelector("#credit");
+    var namesp = document.querySelector("#namesp");
+    var pricesp = document.querySelector("#pricesp");
+    var soluong = document.querySelector("#number_in").value;
+    var soluongview = document.querySelector("#sluong");
+    var tsp = document.querySelector("#tsp").innerHTML;
+    var gsp = document.querySelector("#gsp").innerHTML;
+    var length_price = gsp.length;
+    var price_sp = 0;
+    var pow = 1;
+    for (var i = parseInt(length_price)-2; i >= 0; i--)
+    {
+        if(gsp[i] != '.')
+        {
+            if(gsp[i] == ' ')
+            {
+                break;
+            }
+            price_sp += parseInt(gsp[i]) * pow;
+          
+            pow = pow *10;
+        }
+    }
+    credit.style.display = 'flex';
+    namesp.innerHTML = tsp;
+    pricesp.innerHTML = price_sp*parseInt(soluong);
+    var imgs = document.querySelector("#img_sp_l").innerHTML;
+    var imgcy = document.querySelector("#img_sp");
+    imgcy.innerHTML =  imgs;
+    soluongview.innerHTML = soluong;
+    var phone = document.querySelector("#phone");
+    phone.addEventListener('change',() =>
+    {
+            checkphone();
+    });
+    credit.addEventListener('click',(e) => {if(e.target === credit){credit.style.display = 'none';}});
+}
+)
+
+// hàm
+
+// hàm
+
+function checkphone()
+{
+    var phone = document.querySelector("#phone");
+    var pattern = /^([0-9]{9,10})+$/;
+    if(!pattern.test(phone.value))
+    {
+        phone.style.border = '1px solid red';
+        alert("Số điện thoại không hợp lệ (9-10 số) ");
+        return false
+    }
+    else
+    {
+        phone.style.border = '';
+        return true;
+    }
+}
+
+// hàm thêm sản phẩm vào giỏ hàng
+function additems(imgs,tsp,price_sp,soluong,tongtien)
+{
+    var item = 
+    {
+        imagesp: imgs,
+        namesp: tsp,
+        pricesp: price_sp,
+        slsp: soluong,
+        thanhtien: tongtien
+    }
+    sanpham_giohang.push(item);
+    alert("Đã thêm sản phẩm "+ tsp + ' với số lượng: ' + soluong + ' vào giỏ hàng');
+}
+});
+</script>
+<body>
+    <div class="container">
+        <!-- phần 1 -->
+        <div class="header">
+            <div class="row">
+                <div class="col-md-2 col-sm-2">
+                    <a href="#"><img src="../IMG/logoxgear.png" alt="LOGO" style="margin-top: 10%; margin-left: 20%;"></a>
+                </div>
+                <div class="col-md-9 col-sm-9" style="margin-top: 2%;">
+                    <input type="search" class="search" name="search" placeholder="Bạn cần tìm sản phẩm gì?">
+                    <button class="button">
+                        <i class="fa-sharp fa-solid fa-magnifying-glass" style="color: #f7f7f7;"></i>
+                    </button> 
+                </div>
+                <div class="col-md-1 col-sm-1" style="margin-top: 2%;">
+                    <button class="shop">
+                        <a href="giohang.html" class="text-decoration-none text-light"><i class="fa-solid fa-bag-shopping"></i></a>
+                    </button>
+                </div>
+            </div>
+            <div class="content">
+                <ul class="menu">
+                    <li class="laptop"><a href="">Laptop</a>
+                        <ul class="sub-menu" style="height: 348px;">
+                            <li><a href="">Laptop Acer</a>
+                                <ul class="sub-menu" style="height: 232px; width: 100px;">
+                                    <li><a href="">Aspire 7</a></li>
+                                    <li><a href="">Nitro 5</a></li>
+                                    <li><a href="">Helios</a></li>
+                                    <li><a href="">Triton</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="">Laptop Asus</a>
+                                <ul class="sub-menu" style="height: 232px; width: 160px;">
+                                    <li><a href="">TUF Series</a></li>
+                                    <li><a href="">TUF Gaming</a></li>
+                                    <li><a href="">ROG Series</a>
+                                        <ul class="sub-menu" style="height: 174px;">
+                                            <li><a href="">Strix G</a></li>
+                                            <li><a href="">Zephyrus</a></li>
+                                            <li><a href="">Scar</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="">Văn Phòng</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="">Laptop Lenovo</a>
+                                <ul class="sub-menu" style="height: 174px;">
+                                    <li><a href="">Ideapad Gaming</a></li>
+                                    <li><a href="">Legion Gaming</a></li>
+                                    <li><a href="">Văn Phòng</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="">Laptop MSI</a>
+                                <ul class="sub-menu" style="height: 406px;">
+                                    <li><a href="">Alpha</a></li>
+                                    <li><a href="">Cyborg Series</a></li>
+                                    <li><a href="">Katana Series</a></li>
+                                    <li><a href="">GF Series</a></li>
+                                    <li><a href="">GL Series</a></li>
+                                    <li><a href="">GP Series</a></li>
+                                    <li><a href="">GE Series</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="">Laptop Gigabyte</a>
+                                <ul class="sub-menu" style="height: 174px;">
+                                    <li><a href="">G5 Series</a></li>
+                                    <li><a href="">Aorus</a></li>
+                                    <li><a href="">Aero</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="">Laptop HP</a>
+                                <ul class="sub-menu" style="height: 174px;">
+                                    <li><a href="">Victus</a></li>
+                                    <li><a href="">Omen</a></li>
+                                    <li><a href="">Envy</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><a href="">Xgear PC</a>
+                        <ul class="sub-menu" style="height: 348px;">
+                            <li><a href="">Tự chọn cấu hình</a></li>
+                            <li><a href="">Mini PC</a></li>
+                            <li><a href="">PC Gen 13</a></li>
+                            <li><a href="">PC Gaming</a></li>
+                            <li><a href="">PC Gigabyte</a></li>
+                            <li><a href="">PC Gamming</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="">Màn hình</a>
+                        <ul class="sub-menu" style="height: 174px; width: 180px;">
+                            <li><a href="">Màn hình theo hãng</a>
+                                <ul class="sub-menu" style="height: 406px;">
+                                    <li><a href="">Màn hình Acer</a></li>
+                                    <li><a href="">Màn hình Asus</a></li>
+                                    <li><a href="">Màn hình Dell</a></li>
+                                    <li><a href="">Màn hình Gigabyte</a></li>
+                                    <li><a href="">Màn hình MSI</a></li>
+                                    <li><a href="">Màn hình Philips</a></li>
+                                    <li><a href="">Màn hình Samsung</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="">Màn hình Gaming</a>
+                            <li><a href="">Màn hình đồ họa</a>
+                        </ul>
+                    </li>
+                    <li><a href="">Linh kiện</a>
+                        <ul class="sub-menu" style="height: 348px;">
+                            <li><a href="">CPU</a>
+                                <ul class="sub-menu"style="height: 116px;">
+                                    <li><a href="">CPU AMD</a>
+                                        <ul class="sub-menu"style="height: 116px;">
+                                            <li><a href="">Ryzen 5000 Series</a></li>
+                                            <li><a href="">Ryzen 7000 Series</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="">CPU Intel</a>
+                                        <ul class="sub-menu"style="height: 116px;">
+                                            <li><a href="">Intel 12th</a></li>
+                                            <li><a href="">Intel 13th</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li><a href="">Mainboard</a>
+                                <ul class="sub-menu" style="height: 174px; width: 160px;">
+                                    <li><a href="">Mainboard Gigabyte</a>
+                                        <ul class="sub-menu" style="height: 116px;">
+                                            <li><a href="">Mainboard Gigabyte ADM</a></li>
+                                            <li><a href="">Mainboard Gigabyte Intel</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="">Mainboard Asus</a>
+                                        <ul class="sub-menu" style="height: 116px;">
+                                            <li><a href="">Mainboard Asus ADM</a></li>
+                                            <li><a href="">Mainboard Asus Intel</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="">Mainboard MSI</a>
+                                        <ul class="sub-menu" style="height: 116px;">
+                                            <li><a href="">Mainboard MSI ADM</a></li>
+                                            <li><a href="">Mainboard MSI Intel</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li><a href="">VGA</a>
+                                <ul class="sub-menu" style="height: 232px; width: 160px;">
+                                    <li><a href="">VGA Gigabyte</a>
+                                        <ul class="sub-menu" style="height: 290px;">
+                                            <li><a href="">VGA Gigabyte GTX</a></li>
+                                            <li><a href="">VGA Gigabyte RTX 2000</a></li>
+                                            <li><a href="">VGA Gigabyte RTX 3000</a></li>
+                                            <li><a href="">VGA Gigabyte RTX 4000</a></li>
+                                            <li><a href="">VGA Gigabyte Radeon</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="">VGA Asus</a>
+                                        <ul class="sub-menu" style="height: 232px;">
+                                            <li><a href="">VGA Asus GTX</a></li>
+                                            <li><a href="">VGA Asus RTX 2000</a></li>
+                                            <li><a href="">VGA Asus RTX 3000</a></li>
+                                            <li><a href="">VGA Asus RTX 4000</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="">VGA MSI</a>
+                                        <ul class="sub-menu" style="height: 290px;">
+                                            <li><a href="">VGA MSI GTX</a></li>
+                                            <li><a href="">VGA MSI RTX 2000</a></li>
+                                            <li><a href="">VGA MSI RTX 3000</a></li>
+                                            <li><a href="">VGA MSI RTX 4000</a></li>
+                                            <li><a href="">VGA MSI Radeon</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="">VGA Intel</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="">RAM</a>
+                                <ul class="sub-menu" style="height: 116px;">
+                                    <li><a href="">RAM Laptop</a></li>
+                                    <li><a href="">RAM PC</a>
+                                        <ul class="sub-menu" style="height: 290px;">
+                                            <li><a href="">RAM Corsair</a></li>
+                                            <li><a href="">RAM G.skill</a></li>
+                                            <li><a href="">RAM Gigabyte</a></li>
+                                            <li><a href="">RAM Kingston</a></li>
+                                            <li><a href="">RAM TeamGroup</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li><a href="">SSD</a>
+                                <ul class="sub-menu" style="height: 232px;">
+                                    <li><a href="">SSD 120GB-128GB</a></li>
+                                    <li><a href="">SSD 250GB-256GB</a></li>
+                                    <li><a href="">SSD 500GB-512GB</a></li>
+                                    <li><a href="">SSD 1T-2T</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="">HDD</a>
+                                <ul class="sub-menu" style="height: 116px;">
+                                    <li><a href="">HDD Laptop</a></li>
+                                    <li><a href="">HDD PC</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><a href="">Gaming Gear</a>
+                        <ul class="sub-menu" style="height: 348px;">
+                            <li><a href="">Bàn Phím</a>
+                                <ul class="sub-menu" style="height: 348px;">
+                                    <li><a href="">Bàn Phím iKBC</a></li>
+                                    <li><a href="">Bàn Phím Akko</a></li>
+                                    <li><a href="">Bàn Phím Asus</a></li>
+                                    <li><a href="">Bàn Phím Logitech</a></li>
+                                    <li><a href="">Bàn Phím Razer</a></li>
+                                    <li><a href="">Bàn Phím Havit</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="">Chuột</a>
+                                <ul class="sub-menu" style="height: 348px;">
+                                    <li><a href="">Chuột iKBC</a></li>
+                                    <li><a href="">Chuột Akko</a></li>
+                                    <li><a href="">Chuột Asus</a></li>
+                                    <li><a href="">Chuột Logitech</a></li>
+                                    <li><a href="">Chuột Razer</a></li>
+                                    <li><a href="">Chuột Havit</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="">Tai Nghe</a>
+                                <ul class="sub-menu" style="height: 348px;">
+                                    <li><a href="">Tai Nghe HyperX</a></li>
+                                    <li><a href="">Tai Nghe Rappo</a></li>
+                                    <li><a href="">Tai Nghe Asus</a></li>
+                                    <li><a href="">Tai Nghe Logitech</a></li>
+                                    <li><a href="">Tai Nghe Razer</a></li>
+                                    <li><a href="">Tai Nghe Havit</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="">Lót Chuột</a>
+                                <ul class="sub-menu" style="height: 348px;">
+                                    <li><a href="">Lót Chuột HyperX</a></li>
+                                    <li><a href="">Lót Chuột Rappo</a></li>
+                                    <li><a href="">Lót Chuột Asus</a></li>
+                                    <li><a href="">Lót Chuột Logitech</a></li>
+                                    <li><a href="">Lót Chuột Razer</a></li>
+                                    <li><a href="">Lót Chuột Havit</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="">Microphone</a>
+                                <ul class="sub-menu" style="height: 116px;">
+                                    <li><a href="">Microphone HyperX</a></li>
+                                    <li><a href="">Microphone Razen</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="">Loa</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="">Phụ kiện</a>
+                        <ul class="sub-menu" style="height: 174px;">
+                            <li><a href="">Đế tản nhiệt</a></li>
+                            <li><a href="">Phụ kiện PC</a></li>
+                            <li><a href="">Thiết bị mạng</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="">Bàn/Ghế</a>
+                        <ul class="sub-menu" style="height: 116px;">
+                            <li><a href="">Ghế Gaming</a></li>
+                            <li><a href="">Bàn Gaming</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="">Apple</a></li>
+                    <li><a href="" class="tc">Tự chọn cấu hình PC</a></li>
+                </ul>
+            </div>
+        </div>
+        <!-- Phẩn 2 -->
+        <div class="maincontent">
+            <div class="menu_choose_mini">
+                <a href="../HTML/Laptop.html" class="text-danger">Laptop</a>
+                <span>&nbsp;»&nbsp; </span>
+                <a href="../HTML/Laptop.html" class="text-danger">Laptop Asus</a>
+                <span>&nbsp;»&nbsp; </span>
+                <a href="../HTML/Laptop.html" class="text-danger">ROG Series</a>
+            </div>
+        </div>
+        <!-- phần 3 -->
+        <div class="wapper_review_product">
+            <div class="container_review_product">
+                <div class="review">
+                    <table  id="c_p_12">
+                        <tr>
+                            <td id="img_sp_l"><img src="../IMG/product1.jpg" width="300px" height="300px"></td>
+                            <td>
+                                <h6 id="tsp">Laptop Gaming Asus ROG Strix G16 G614JU-N3135W Geforce RTX 4050 6GB Intel Core i5 13450HX 8GB 512GB 16″ 165Hz FHD IPS 4-zone Win 11</h6>
+                                <div class="tien" style="display: flex; width: 200px; margin-left: 0;">
+                                    <p><del>39,990,000 ₫</del></p>
+                                    <p id="gsp" class="text-danger">35,990,000 ₫</p>
+                                </div>
+                                <p>CPU: Intel Core i5 13450HX</p>
+                                <p>VGA:	Geforce RTX 4050 6GB</p>   
+                                <p>RAM:	DDR5 8GB (1 x 8GB) 4800MHz; 2 slots, up to 32GB</p>
+                                <p>SSD:	512GB SSD NVMe M.2 PCIe Gen 4 x 4, 2 slots</p>
+                                <p>Màn hình: 16″ FHD+ 16:10 (1920 x 1200), WUXGA 250NITS, 100% sRGB 165Hz G-sync</p>
+                                <p>OS: Windows 11 64 Bit</p>
+                                <form action="" methos="post">
+                                    <div class="box_form_buy">
+                                    <button class="mini_in" type="button" onclick="min()">-</button>
+                                    <input id="number_in" type="number" value="1"></input>
+                                    <button class="max_in" type="button" onclick="max()">+</button>
+                                    </div>
+                                    <input id="ThemSP" type="button" value="Thêm vào giỏ"></input>
+                                    <input id="BuySp" class="buy101" type="button" value="Mua Ngay"></input>
+                                </form>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="sptt">
+            <div class="row">
+                <div class="col-md-2 col-sm-2" style="margin-left: 120px;">
+                    <h5>SẢN PHẨM TƯ TỰ</h5>
+                </div>
+            </div>
+        </div>
+        <div class="product" style="width: 85%; margin-top: 1%;">
+            <div class="row">
+                <div class="col-md-3 col-sm-3">
+                    <div class="card" style="width: 20rem;">
+                        <a href=""><img class="card-img-top" src="../IMG/sptt1.jpg" alt="Card image cap"style="padding-top:20px; width: 300px;"></a>
+                        <div class="card-body">
+                            <div class="sell">
+                                Nâng cấp RAM chỉ 49k
+                            </div>
+                          <h5 class="card-title">Laptop Gaming Asus TUF F15 FX506LHB-HN188W Geforce GTX 1650 4GB Intel Core i5 10300H 8GB 512GB 15.6″ 144Hz IPS Win 11 Gray Metal RGB</h5>
+                          <div class="price">
+                            <h6><del>39,990,000<u>đ</u></del></h6>
+                            <h6 class="monney"> 36,990,000<u>đ</u></h6>
+                          </div>
+                            <div class="showpr">
+                                <div class="row">
+                                    <div class="col-md-6" style="display: flex;">
+                                        <img src="../IMG/chip.png" alt="" height="30px" width="30px">
+                                        <p>R5 7530U</p>
+                                    </div>
+                                    <div class="col-md-6" style="display: flex; margin-left: -10px;">
+                                        <img src="../IMG/card.png" alt="" height="30px" width="30px">
+                                        <p>GTX 1650</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6" style="display: flex;">
+                                        <img src="../IMG/ram.png" alt="" height="30px" width="30px">
+                                        <p>DDR4 8GB</p>
+                                    </div>
+                                    <div class="col-md-6" style="display: flex; margin-left: -17px;">
+                                        <img src="../IMG/ssd.png" alt="" height="30px" width="30px" s>
+                                        <p>512GB</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6" style="display: flex;">
+                                        <img src="../IMG/baohanh.png" alt="" height="30px" width="30px">
+                                        <p>24 tháng</p>
+                                    </div>
+                                    <div class="col-md-6" style="display: flex;">
+                                        <img src="../IMG/manhinh.png" alt="" height="30px" width="30px">
+                                        <p>14" FHD IPS</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                      </div>
+                </div>
+                <div class="col-md-3 col-sm-3">
+                    <div class="card" style="width: 20rem;">
+                        <a href=""><img class="card-img-top" src="../IMG/sptt3.png" alt="Card image cap"style="padding-top:20px; width: 300px;"></a>
+                        <div class="card-body">
+                            <div class="sell">
+                                Nâng cấp RAM chỉ 49k
+                            </div>
+                          <h5 class="card-title">Laptop Gaming Asus TUF F15 FX506HC-HN144W RTX 3050 4GB Intel Core i5 11400H 8GB 512GB 15.6″ FHD IPS 144Hz Graphite Black RGB Win 11</h5>
+                          <div class="price">
+                            <h6><del>39,990,000<u>đ</u></del></h6>
+                            <h6 class="monney"> 36,990,000<u>đ</u></h6>
+                          </div>
+                            <div class="showpr">
+                                <div class="row">
+                                    <div class="col-md-6" style="display: flex;">
+                                        <img src="../IMG/chip.png" alt="">
+                                        <p>R5 7530U</p>
+                                        
+                                    </div>
+                                    <div class="col-md-6" style="display: flex;margin-left: -10px;">
+                                        <img src="../IMG/card.png" alt="">
+                                        <p>GTX 1650</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6" style="display: flex;">
+                                        <img src="../IMG/ram.png" alt="">
+                                        <p>DDR4 8GB</p>
+                                    </div>
+                                    <div class="col-md-6" style="display: flex;margin-left: -17px;">
+                                        <img src="../IMG/ssd.png" alt="">
+                                        <p>512GB</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6" style="display: flex;">
+                                        <img src="../IMG/baohanh.png" alt="">
+                                        <p>24 tháng</p>
+                                    </div>
+                                    <div class="col-md-6" style="display: flex;">
+                                        <img src="../IMG/manhinh.png" alt="">
+                                        <p>14" FHD IPS</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                      </div>
+                </div>
+                <div class="col-md-3 col-sm-3">
+                    <div class="card" style="width: 20rem;">
+                        <a href=""><img class="card-img-top" src="../IMG/sptt1.jpg" alt="Card image cap"style="padding-top:20px; width: 300px;"></a>
+                        <div class="card-body">
+                            <div class="sell">
+                                Nâng cấp RAM chỉ 49k
+                            </div>
+                          <h5 class="card-title">Laptop Gaming Asus ROG Strix G16 G614JU-N3135W Geforce RTX 4050 6GB Intel Core i5 13450HX 8GB 512GB 16″ 165Hz FHD IPS 4-zone Win 11</h5>
+                          <div class="price">
+                            <h6><del>39,990,000<u>đ</u></del></h6>
+                            <h6 class="monney"> 36,990,000<u>đ</u></h6>
+                          </div>
+                            <div class="showpr">
+                                <div class="row">
+                                    <div class="col-md-6" style="display: flex;">
+                                        <img src="../IMG/chip.png" alt="" height="30px" width="30px">
+                                        <p>R5 7530U</p>
+                                    </div>
+                                    <div class="col-md-6" style="display: flex; margin-left: -10px;">
+                                        <img src="../IMG/card.png" alt="" height="30px" width="30px">
+                                        <p>GTX 1650</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6" style="display: flex; margin-left: 4px;">
+                                        <img src="../IMG/ram.png" alt="" height="30px" width="30px">
+                                        <p>DDR4 8GB</p>
+                                    </div>
+                                    <div class="col-md-6" style="display: flex; margin-left: -17px;">
+                                        <img src="../IMG/ssd.png" alt="" height="30px" width="30px" s>
+                                        <p>512GB</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6" style="display: flex;">
+                                        <img src="../IMG/baohanh.png" alt="" height="30px" width="30px">
+                                        <p>24 tháng</p>
+                                    </div>
+                                    <div class="col-md-6" style="display: flex;">
+                                        <img src="../IMG/manhinh.png" alt="" height="30px" width="30px">
+                                        <p>14" FHD IPS</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                      </div>
+                </div>
+                <div class="col-md-3 col-sm-3">
+                    <div class="card" style="width: 20rem;">
+                        <a href=""><img class="card-img-top" src="../IMG/sptt4.jpg" alt="Card image cap"style="padding-top:20px; width: 300px;"></a>
+                        <div class="card-body">
+                            <div class="sell">
+                                Nâng cấp RAM chỉ 49k
+                            </div>
+                          <h5 class="card-title">Laptop Gaming Asus ROG Strix G16 G614JU-N3135W Geforce RTX 4050 6GB Intel Core i5 13450HX 8GB 512GB 16″ 165Hz FHD IPS 4-zone Win 11</h5>
+                          <div class="price">
+                            <h6><del>39,990,000<u>đ</u></del></h6>
+                            <h6 class="monney"> 36,990,000<u>đ</u></h6>
+                          </div>
+                            <div class="showpr">
+                                <div class="row">
+                                    <div class="col-md-6" style="display: flex;">
+                                        <img src="../IMG/chip.png" alt="" height="30px" width="30px">
+                                        <p>R5 7530U</p>
+                                    </div>
+                                    <div class="col-md-6" style="display: flex; margin-left: -10px;">
+                                        <img src="../IMG/card.png" alt="" height="30px" width="30px">
+                                        <p>GTX 1650</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6" style="display: flex; margin-left: 4px;">
+                                        <img src="../IMG/ram.png" alt="" height="30px" width="30px">
+                                        <p>DDR4 8GB</p>
+                                    </div>
+                                    <div class="col-md-6" style="display: flex; margin-left: -17px;">
+                                        <img src="../IMG/ssd.png" alt="" height="30px" width="30px" s>
+                                        <p>512GB</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6" style="display: flex;">
+                                        <img src="../IMG/baohanh.png" alt="" height="30px" width="30px">
+                                        <p>24 tháng</p>
+                                    </div>
+                                    <div class="col-md-6" style="display: flex;">
+                                        <img src="../IMG/manhinh.png" alt="" height="30px" width="30px">
+                                        <p>14" FHD IPS</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                      </div>
+                </div>
+            </div>
+        </div><br>
+        <div class="bottom-content">
+            <div class="row">
+                <div class="col-md-4 col-sm-4 border" style="margin-left: 120px; height: 100%;">
+                    <table class="table table-bordered table-primary table-light table-striped table-hover">
+                        <h6 class="text-danger" style="margin-top: 10px;">THỐNG SỐ KỸ THUẬT</h6>
+                        <tr>
+                            <th>CPU</th>
+                            <th>Intel Core i5 13450HX</th>
+                        </tr>
+                        <tr>
+                            <th>VGA</th>
+                            <th>Geforce RTX 4050 6GB</th>
+                        </tr>
+                        <tr>
+                            <th>RAM</th>
+                            <th>DDR5 8GB (1 x 8GB) 4800MHz; 2 slots, up to 32GB</th>
+                        </tr>
+                        <tr>
+                            <th>SSD</th>
+                            <th>Intel Core i5 13450HX</th>
+                        </tr>
+                        <tr>
+                            <th>CPU</th>
+                            <th>512GB SSD NVMe M.2 PCIe Gen 4 x 4, 2 slots</th>
+                        </tr>
+                        <tr>
+                            <th>Màn hình</th>
+                            <th>16″ FHD+ 16:10 (1920 x 1200), WUXGA 250NITS, 100% sRGB 165Hz G-sync</th>
+                        </tr>
+                        <tr>
+                            <th>OS</th>
+                            <th>Windows 11 64 Bit</th>
+                        </tr>
+                        <tr>
+                            <th>LAN</th>
+                            <th>10/100/1000 Mbps</th>
+                        </tr>
+                        <tr>
+                            <th>Wireless LAN</th>
+                            <th>Bluetooth 5.2, Wi-Fi 6E(802.11ax) (Triple band) 2*2</th>
+                        </tr>
+                        <tr>
+                            <th>Connector</th>
+                            <th>1x RJ45 LAN port 1x Thunderbolt™ 4 support DisplayPort™ 1x USB 3.2 Gen 2 Type-C support DisplayPort™ / power delivery / G-SYNC 2x USB 3.2 Gen 2 Type-A</th>
+                        </tr>
+                        <tr>
+                            <th>Bàn phím</th>
+                            <th>Backlit Chiclet Keyboard 4-Zone RGB</th>
+                        </tr>
+                        <tr>
+                            <th>Pin</th>
+                            <th>90WHrs, 4S1P, 4-cell Li-ion</th>
+                        </tr>
+                        <tr>
+                            <th>Trọng lượng</th>
+                            <th>2.7 Kg</th>
+                        </tr>
+                        <tr>
+                            <th>Bảo hành</th>
+                            <th>24 tháng Chính Hãng</th>
+                        </tr>
+                        <tr>
+                            <th>Kích thước</th>
+                            <th>35.4 x 26.4 x 2.26 ~ 3.04 cm</th>
+                        </tr>
+                    </table>
+                </div>
+                <div class="col-md-6 col-sm-6 border">
+                    <h1 class="text-danger text-center" style="margin-top: 10px;">ĐẶC ĐIỂM NỔI BẬT</h1>
+                    <h3>MÔ TẢ</h3>
+                    <h4 class="text-center">Asus ROG Strix G16 G614JU-N3135W</h4>
+                    <img src="../IMG/mota1.jpeg" alt="" style="width: 100%;"><br><br>
+                    <h6 class="text-center">Làm chủ cuộc chơi với Asus ROG Strix G16 G614JU-N3135W siêu mạnh mẽ, được trang bị bộ vi xử lý lên đến Intel® Core™ i9-13980HX thế hệ 13 mới nhất cùng đồ họa lên đến NVIDIA® GeForce RTX™ 4090 mang đến hiệu năng vượt trội, thoải mái chiến các tựa game nặng hay các công việc sáng tạo đòi hỏi khả năng đồ họa cao cấp. Kết hợp với màn hình ROG Nebula lên đến 2K 240Hz/3ms siêu mượt cùng hệ thống tản nhiệt thông minh ROG Intelligent Cooling nâng cấp, công nghệ tản nhiệt 3 quạt với keo tản nhiệt kim loại lỏng, đảm bảo duy trì nhiệt độ mát mẻ cho máy.</h6>
+                    <img src="../IMG/mota2.jpeg" alt="" style="width: 100%;">
+                    <h3 class="text-center"><b>Khai phá sức mạnh gaming vượt trội</b></h3><br><br>
+                    <h6 class="text-center">Tự tin chiến game với sức mạnh gaming vượt trội trên Asus ROG Strix G16 G614JU-N3135W khi được trang bị bộ vi xử lý lên đến Intel® Core™ i9-13980HX thế hệ thứ 13 và GPU lên đến NVIDIA GeForce RTX 4090 có TGP tối đa 175W với Dynamic Boost thống trị đối thủ trong tất cả tựa game mới nhất. Tăng cường sức mạnh gaming bằng MUX Switch chuyên dụng và NVIDIA Advanced Optimus cho phép Asus ROG Strix G16 G614JU-N3135W giải phóng tiềm năng thực sự trên phần cứng, cung cấp hiệu năng tuyệt vời. Bộ lưu trữ SSD PCIe Gen 4 và RAM DDR5 4800MHz lên đến 32GB, kho game đa dạng và các phiên đa nhiệm cường độ cao sẽ trở nên dễ dàng đối với cỗ máy chơi game này.</h6>
+                    <img src="../IMG/mota3.jpeg" alt="" style="width: 100%;"><br><br>
+                    <h3 class="text-center"><b>Hệ thống tản nhiệt thông minh, hiệu quả</b></h3>
+                    <h6 class="text-center">Để cân bằng với sức mạnh gaming, khung máy và bo mạch chủ của Asus ROG Strix G16 G614JU-N3135W đều được thiết kế để phù hợp với hệ thống tản nhiệt toàn chiều rộng mới, các lá tản nhiệt được di chuyển đến gần lỗ thông hơi, làm mát hiệu quả hơn. Bao quanh bo mạch chủ với các lá tản nhiệt dày đặc tăng 71% diện tích bề mặt so với thế hệ 2022. Thiết kế này tối đa hóa đường dẫn có sẵn để khí nóng thoát ra ngoài và tăng đáng kể luồng khí tổng thể.<br>Bên cạnh đó, Asus ROG Strix G16 G614JU-N3135W còn sở hữu hệ thống làm mát 3 quạt tiên tiến cho phép đẩy mạnh hiệu suất giúp giữ cho GPU và VRAM luôn mát mẻ, kết hợp với 7 ống đồng và keo tản nhiệt kim loại lỏng Conductonaut Extreme trên cả CPU và GPU mang đến khả năng tản nhiệt hiệu quả</h6>
+                    <img src="../IMG/mota4.jpeg" alt="" style="width: 100%;">
+                    <h3 class="text-center"><b>Màn hình chuẩn ROG Nebula siêu mượt lên đến 2K </b></h3><br><br>
+                    <h6 class="text-center">Đạt chuẩn màn hình cao cấp ROG Nebula với độ phân giải 2K sắc nét, tần số quét cao 240Hz/3ms, tỷ lệ 16:10, độ phủ màu 100% DCI-P3, Asus ROG Strix G16 G614JU-N3135W có độ chính xác hoàn hảo đến từng điểm ảnh ngay cả trong những trận chiến khốc liệt nhất. Ngoài ra, Asus ROG Strix G16 G614JU-N3135W còn có sẵn phiên bản Full HD 165Hz 100% sRGB, với mỗi tùy chọn, máy cung cấp màu sắc tuyệt vời, hỗ trợ Dolby Vision, Adaptive-Sync và tỷ lệ màn hình so với thân máy là 90% mang lại trải nghiệm xem và chơi game tuyệt vời.</h6>
+                    <img src="../IMG/mota5.jpeg" alt="" style="width: 100%;">
+                    <h3 class="text-center"><b>Nổi bật với hệ thống đèn LED RGB</b></h3><br><br>
+                    <h6 class="text-center">Asus ROG Strix G16 G614JU-N3135W với hệ thống đèn LED RGB trên thân máy và bàn phím nổi bật cùng khả năng tùy chỉnh độc đáo với đa chế độ hiển thị trên Armory Crate. Công nghệ Overstroke mang đến khả năng làm việc và giải trí tuyệt vời, giảm tác động của phím và cải thiện khả năng phản hồi. Được thiết kế dành cho các game thủ, bàn phím có các phím chức năng cách nhau để nhận diện trực quan và các phím nóng chuyên dụng cho phép truy cập nhanh vào các lệnh cần thiết. Các phím mũi tên lớn cho phép điều khiển chính xác hơn trong sức nóng của trận chiến. </h6>
+                    <img src="../IMG/mota6.jpeg" alt="" style="width: 100%;">
+                    <h3 class="text-center"><b>Thiết kế để chinh phục</b></h3><br><br>
+                    <h6 class="text-center">Republic of Gamers được xây dựng bởi những người thích chơi games. Tất cả các thiết kế và cân nhắc của ROG đều hướng tới game thủ đầu tiên, từ thiết kế khung máy, tích hợp hệ thống led, điều khiển phần mềm và chức năng macro. Những tính năng thiết kế độc quyền của ROG không chỉ mang lại cho bạn lợi thế cạnh tranh mà còn đảm bảo bạn không bao giờ bị lẫn vào đám đông.</h6>
+                    <img src="../IMG/mota7.jpeg" alt="" style="width: 100%;">
+                    <h3 class="text-center"><b>Đắm chìm với âm thanh chuẩn studio</b></h3><br><br>
+                    <h6 class="text-center">Asus ROG Strix G16 G614JU-N3135W phát triển dựa trên Dolby Atmos bao gồm hai loa tweeter và hai loa trầm hướng xuống để tạo ra một sân khấu âm thanh chân thực cho bạn. Âm thanh Hi-Res đảm bảo bạn nghe nhạc với chất lượng như bản ghi. Tính năng Khử tiếng ồn AI hai chiều xử lý cả âm thanh đầu vào và đầu ra để lọc mọi tiếng ồn không phù hợp xung quanh, đảm bảo các cuộc gọi, cuộc trò chuyện và streams của bạn diễn ra mà không bị phân tâm.</h6>
+                </div>
+            </div>
+        </div>
+        <!-- phần 6 -->
+        <div id="credit" >
+            <div id="credit_wap1">
+                <div>
+                    <form action="">
+                        <h3 style="text-align: center; margin:0;">Thông tin khách hàng</h3>
+                        <span>Tên khách hàng </span><br>
+                        <input type="text" placeholder="Nhập tên" required> <br>
+                        <span>Địa chỉ</span><br>
+                        <input type="text" placeholder="Nhập địa chỉ" required> <br>
+                        <span>Số điện thoại </span><br>
+                        <input type="text" placeholder="Nhập số điện thoại" id="phone" required> <br>
+                        <input type="radio" name="pttt" id="pttt1" onchange="cl1()" required>Tiền mặt<br>
+                        <input type="radio" name="pttt" id="pttt2" onchange="cl2()" required>Chuyển khoản<br>
+                        <div id="phanhoi"></div>
+                        <button type="submit">Thanh toán</button>
+                    </form>
+                </div>
+            </div>
+            <div id="credit_wap2">
+                <h3 style="text-align: center; margin:0;">Thông tin sản phẩm</h3>
+                <div id="image_sp"></div>
+                    <div id="img_sp"></div>
+                     <div id="namesp"></div><br>
+                     <div>Số lượng:<span  id="sluong"></span></div><br>
+                    <div>Thành tiền: <span id="pricesp"></span> </div><br>
+            </div>
+        </div>
+    </div>
+    <div class ="footer">
+        <div class="r1" style="margin-right: 30px;">
+            <a href="https://xgear.net/"> <img src="/IMG/logoff.png" class="logo1"></a> <br>
+            <p>
+                Được biết đến là đơn vị ủy <br>
+                quyền bán lẻ chính thức tại Việt <br>
+                Nam, chuyên kinh doanh các <br>
+                sản phẩm Laptop Gaming cao <br>
+                cấp, PC đồ họa, linh-phụ kiện,<br>
+                thiết bị giải trí của nhiều nhãn  <br>
+                hàng lớn như Acer, Asus, Apple,<br>
+                Dell, HP, Lenovo, MSI, Gigabyte,<br>
+                Razer, HyperX, Logitech,<br>
+                Samsung…
+            </p>
+        </div>
+        <div class="r2">
+            <b>Thông tin </b>   <br><br>
+            <p>
+                <a href="https://xgear.net/gioi-thieu-so-luoc-ve-xgear/" class="rr2"> Giới thiệu</a>  <br>
+                <a href="  https://xgear.net/shop/ " class="rr2"> Shop </a> <br>
+                <a href="https://news.xgear.net/ " class="rr2">Xgear New </a>  <br>
+                <a href="https://xgear.net/tuyen-dung-nam-moi-co-hoi-moi-cong-viec-moi/ " class="rr2"> Tuyển dụng  </a> <br>
+                <a href=" https://xgear.net/huong-dan-thanh-toan/" class="rr2">Phương thức thanh toán  </a>  <br>
+                <a href=" https://xgear.net/tra-cuu-van-don/" class="rr2"> Tra cứu vận đơn  </a> <br> <br>
+                <b> Giờ làm việc</b> <br><br>
+                Thứ 2-Thứ 7: 9h00- 20h00  <br>
+                Chủ nhật: 9h00- 19h00
+            </p>
+            <br>
+            <div class="icon">
+                <div class="nen-icon">
+                    <a href="https://www.facebook.com/xgearvietnam" class="tt-icon" ><i class="fab fa-facebook"style="font-size:20px"  ></i></a>
+                </div>          
+                <div class="nen-icon-insta">
+                    <a href="https://www.instagram.com/xgearvietnam/" class="tt-icon" ><i class="fa-brands fa-instagram"></i></a> 
+                 </div>     
+                <div class="nen-icon-yt">
+                    <a href="https://www.youtube.com/channel/UCjz-OnYr9IPaQV52TGqDjrw" class="tt-icon" > <i class="fa fa-youtube-play" style="font-size:22px"></i> </a>
+                </div>
+            </div>
+            <a href="http://online.gov.vn/Home/WebDetails/85783?AspxAutoDetectCookieSupport=1" class="tt-icon" > <img src="/IMG/bo-cong-thuong.png" class="bct" ></a>
+        </div>
+        <div class="r3" style="margin-right: 20px;">
+            <b>Chính sách </b><br><br> 
+            <P>
+                <a href=" https://xgear.net/chinh-sach-tra-gop/" class="rr2"> Trả góp  </a> <br>
+                <a href="https://xgear.net/chinh-sach-giao-nhan-hang" class="rr2">  Giao hàng   </a> <br>   
+                <a href="https://xgear.net/chinh-sach-tra-hang/" class="rr2"> Đổi trả </a> <br>
+                <a href="https://xgear.net/chinh-sach-bao-hanh" class="rr2">Bảo hành </a> <br>
+                <a href="https://xgear.net/chinh-sach-bao-mat-thong-tin/" class="rr2"> Bảo mật thông tin</a> 
+                <br> <br>
+                <b> Liên hệ</b> <br> <br>
+                Hotline: <font color="red" class="rr3"> 028 7108 1881 – 093<br>
+                373 1881 <br></font>
+                Mail:<font color="red"  class="rr3">sales@thenewxgear.com</font><br>
+            </P>
+        </div>
+        <div class="r4">
+            <b>Địa chỉ cửa hàng </b> <br> <br>
+            <font  color="black">   <i style='font-size:24px' class='fas'>&#xf3c5;</i><span class="">
+            08 Tự lập, Phường 4, Tân Bình, TP.HCM  </font><br>            
+            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d489.90636204138417!2d106.655601!3d10.792086!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x317529f13f6e8f01%3A0x3bd7fca8b2ecdd5f!2zOCBU4buxIEzhuq1wLCBQaMaw4budbmcgNCwgSOG7kyBDaMOtIE1pbmgsIFRow6BuaCBwaOG7kSBI4buTIENow60gTWluaCA3MDAwMCwgVmnhu4d0IE5hbQ!5e0!3m2!1svi!2sus!4v1681057563772!5m2!1svi!2sus" 
+            width="300" height="146" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"class="bando"></iframe><br><br>
+            <font  color="black"><i style='font-size:24px' class='fas'>&#xf3c5;</i> <span class="">
+            10A1 Ngõ 49, Linh Lang, Ba Đình, Hà Nội </font><br>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d465.49246444560436!2d105.81079!3d21.035098!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135ab70f32ee62d%3A0x198e65b8a995a239!2sXgear%20Vietnam!5e0!3m2!1svi!2sus!4v1681058029887!5m2!1svi!2sus" 
+            width="300" height="146" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="bando"></iframe>
+            <div class="r5" style="position: absolute; left: 57%;">      
+                <h6 style="font-size: 12px;"> Copyright © 2022 Xgear | All rights reserved | Chứng nhận đăng ký doanh nghiệp số : 0316898252 do sở KH và ĐT TP Hồ Chí Minh cấp.</h6>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
