@@ -6,238 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Products One</title>
     <link rel="stylesheet" href="../CSS/bootstrap.min.css">
-    <script src="../JS/jquery-3.6.1.min.js"></script>
-    <script src="../JS/bootstrap.min.js"></script>
     <script src="https://kit.fontawesome.com/1f63977a4e.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="../CSS/one.css">
 </head>
-<script>
-
-// hàm giảm số lượng sản phẩm
-function min()
-{
-    let ele = document.getElementById("number_in");
-    let min = ele.value;
-       if(min > 1){
-        min--;
-    }
-    else
-    {
-        min = min;
-    };
-    document.getElementById("number_in").value = min;
-}
-
-// hàm tăng số lượng sản phẩm
-function max()
-{
-    let ele = document.getElementById("number_in");
-    let max = ele.value;
-    max++;
-    document.getElementById("number_in").value = max;
-}
-// Hàm thanh toán chuyển khoản
-function cl2()
-{
-    var cls2 = document.querySelector("#pttt2").value;
-    var phanhoi = document.querySelector("#phanhoi");
-    phanhoi.innerHTML = 'Vui lòng chuyển khoản vào tài khoản sau:<p>Ngân hàng ACB</p>Số tài khoản 998 858 258 <p></p>';
-}
-// Hàm thanh toán tiền mặt
-function cl1()
-{
-    var cls1 = document.querySelector("#pttt1").value;
-    var phanhoi = document.querySelector("#phanhoi");
-    phanhoi.innerHTML = 'Vui lòng thanh toán khi đơn hàng được giao';
-}
-</script>
-
-<!-- dùng jquery -->
-
-<script>
-$(document).ready(function()
-{
-
-var dem_noti = 0;
-function notification()
-{
-    if(dem_noti == 0)
-    {
-        var p = document.querySelector("#notification_on p");
-        var rep_noti = document.querySelector("#notification_on");
-        var hivi = document.querySelector("#notification");
-        rep_noti.style.width = '300px';
-        hivi.style.color  = 'yellow';
-        hivi.style.border = '2px solid yellow';
-        setTimeout(() => 
-        {
-           p.style.display = 'block';
-        }, 1000);
-        rep_noti.addEventListener('click',(e) => {if(e.target == rep_noti){rep_noti.style.width = '0px';p.style.display='none';dem_noti = 0;   hivi.style.border = '2px solid white'; hivi.style.color  = 'white';}});
-        dem_noti = 1;
-    }
-    else
-    {
-        var p = document.querySelector("#notification_on p");
-        var rep_noti = document.querySelector("#notification_on");
-        var hivi = document.querySelector("#notification");
-        rep_noti.style.width = '0px';
-        p.style.display = 'none';
-        dem_noti = 0;
-        hivi.style.color  = 'white';
-        hivi.style.border = '2px solid white';
-    }
-
-}
-function hiden()
-{
-    var content = document.querySelector("#content");
-    var bt1 = document.querySelector("#an");
-    var bt2 = document.querySelector("#hien");
-    bt1.style.display = 'none';
-    bt2.style.display = 'block';
-    content.style.overflow = 'hidden';
-    content.style.height = '350px';
-    content.style.transition = 'all 1s';
-}
-function visi()
-{
-    var content = document.querySelector("#content");
-    var bt1 = document.querySelector("#an");
-    var bt2 = document.querySelector("#hien");
-    bt1.style.display = 'block';
-    bt2.style.display = 'none';
-    content.style.overflow = 'visible';
-    content.style.height = '1000px';
-    content.style.transition = 'all 0s';
-}
-
-var inputA = document.querySelector("#ThemSP");
-var datalt = localStorage.getItem('sanpham_giohang');
-if(datalt)
-{
-    var sanpham_giohang = JSON.parse(localStorage.getItem('sanpham_giohang'));
-}
-else
-{
-    var sanpham_giohang = [];
-}
-inputA.addEventListener('click', () => 
-{
-    var imgs = document.querySelector("#img_sp_l").innerHTML;
-    var tsp = document.querySelector("#tsp").innerHTML;
-    var gsp = document.querySelector("#gsp").innerHTML;
-    var soluong = document.querySelector("#number_in").value;
-    var length_price = gsp.length;
-    var price_sp = 0;
-    var pow = 1;
-    for (var i = parseInt(length_price)-2; i >= 0; i--)
-    {
-        
-        if(gsp[i] != '.')
-        {
-            if(gsp[i] == ' ')
-            {
-                break;
-            }
-            price_sp += parseInt(gsp[i]) * pow;
-          
-            pow = pow *10;
-        }
-    }
-
-    var tongtien = parseInt(price_sp)*parseInt(soluong);
-    additems(imgs,tsp,price_sp,soluong,tongtien);
-    localStorage.setItem('sanpham_giohang',JSON.stringify(sanpham_giohang));
-});
-
-// hàm
-var inputB = document.querySelector("#BuySp");
-inputB.addEventListener('click', () => 
-{
-    var credit = document.querySelector("#credit");
-    var namesp = document.querySelector("#namesp");
-    var pricesp = document.querySelector("#pricesp");
-    var soluong = document.querySelector("#number_in").value;
-    var soluongview = document.querySelector("#sluong");
-    var tsp = document.querySelector("#tsp").innerHTML;
-    var gsp = document.querySelector("#gsp").innerHTML;
-    var length_price = gsp.length;
-    var price_sp = 0;
-    var pow = 1;
-    for (var i = parseInt(length_price)-2; i >= 0; i--)
-    {
-        if(gsp[i] != '.')
-        {
-            if(gsp[i] == ' ')
-            {
-                break;
-            }
-            price_sp += parseInt(gsp[i]) * pow;
-          
-            pow = pow *10;
-        }
-    }
-    credit.style.display = 'flex';
-    namesp.innerHTML = tsp;
-    pricesp.innerHTML = price_sp*parseInt(soluong);
-    var imgs = document.querySelector("#img_sp_l").innerHTML;
-    var imgcy = document.querySelector("#img_sp");
-    imgcy.innerHTML =  imgs;
-    soluongview.innerHTML = soluong;
-    var phone = document.querySelector("#phone");
-    phone.addEventListener('change',() =>
-    {
-            checkphone();
-    });
-    credit.addEventListener('click',(e) => {if(e.target === credit){credit.style.display = 'none';}});
-}
-)
-
-// hàm
-
-// hàm
-
-function checkphone()
-{
-    var phone = document.querySelector("#phone");
-    var pattern = /^([0-9]{9,10})+$/;
-    if(!pattern.test(phone.value))
-    {
-        phone.style.border = '1px solid red';
-        alert("Số điện thoại không hợp lệ (9-10 số) ");
-        return false
-    }
-    else
-    {
-        phone.style.border = '';
-        return true;
-    }
-}
-
-// hàm thêm sản phẩm vào giỏ hàng
-function additems(imgs,tsp,price_sp,soluong,tongtien)
-{
-    var item = 
-    {
-        imagesp: imgs,
-        namesp: tsp,
-        pricesp: price_sp,
-        slsp: soluong,
-        thanhtien: tongtien
-    }
-    sanpham_giohang.push(item);
-    alert("Đã thêm sản phẩm "+ tsp + ' với số lượng: ' + soluong + ' vào giỏ hàng');
-}
-});
-</script>
 <body>
     <div class="container">
         <!-- phần 1 -->
         <div class="header">
             <div class="row">
                 <div class="col-md-2 col-sm-2">
-                    <a href="#"><img src="../IMG/logoxgear.png" alt="LOGO" style="margin-top: 10%; margin-left: 20%;"></a>
+                    <a href="../HTML/trangchu.html"><img src="../IMG/logoxgear.png" alt="LOGO" style="margin-top: 10%; margin-left: 20%;"></a>
                 </div>
                 <div class="col-md-9 col-sm-9" style="margin-top: 2%;">
                     <input type="search" class="search" name="search" placeholder="Bạn cần tìm sản phẩm gì?">
@@ -528,8 +306,8 @@ function additems(imgs,tsp,price_sp,soluong,tongtien)
                             <td>
                                 <h6 id="tsp">Laptop Gaming Asus ROG Strix G16 G614JU-N3135W Geforce RTX 4050 6GB Intel Core i5 13450HX 8GB 512GB 16″ 165Hz FHD IPS 4-zone Win 11</h6>
                                 <div class="tien" style="display: flex; width: 200px; margin-left: 0;">
-                                    <p><del>39,990,000 ₫</del></p>
-                                    <p id="gsp" class="text-danger">35,990,000 ₫</p>
+                                    <p><del>39.990.000đ</del></p>
+                                    <p id="gsp"class="text-danger">35.990.000đ</p>
                                 </div>
                                 <p>CPU: Intel Core i5 13450HX</p>
                                 <p>VGA:	Geforce RTX 4050 6GB</p>   
@@ -847,31 +625,92 @@ function additems(imgs,tsp,price_sp,soluong,tongtien)
             </div>
         </div>
         <!-- phần 6 -->
-        <div id="credit" >
-            <div id="credit_wap1">
-                <div>
-                    <form action="">
-                        <h3 style="text-align: center; margin:0;">Thông tin khách hàng</h3>
-                        <span>Tên khách hàng </span><br>
-                        <input type="text" placeholder="Nhập tên" required> <br>
-                        <span>Địa chỉ</span><br>
-                        <input type="text" placeholder="Nhập địa chỉ" required> <br>
-                        <span>Số điện thoại </span><br>
-                        <input type="text" placeholder="Nhập số điện thoại" id="phone" required> <br>
-                        <input type="radio" name="pttt" id="pttt1" onchange="cl1()" required>Tiền mặt<br>
-                        <input type="radio" name="pttt" id="pttt2" onchange="cl2()" required>Chuyển khoản<br>
-                        <div id="phanhoi"></div>
-                        <button type="submit">Thanh toán</button>
-                    </form>
+        <div class="modal fade" id="modal">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <div class="row">
+                            <div class="col-md-12 col-sm-12">
+                                <h5 class="text-danger">Thông tin thanh toán</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-body" style="width: 100%;">
+                        <form action="" class="form-control">
+                            <div class="row">
+                                <div class="col-md-12 col-sm-12">
+                                    <label for="">Họ Tên</label>
+                                    <span class="text-danger">*</span>
+                                    <input type="text" id="ht" style="width: 100%; padding-left: 10px;background-color:#f8f4f4; height: 50px; border: none;" placeholder="Họ và Tên">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12 col-sm-12">
+                                    <label for="">Quốc gia/Khu vực</label>
+                                    <span class="text-danger">*</span>
+                                    <select name="local" id="local" style="width: 100%; padding-left: 10px;background-color:#f8f4f4; height: 50px; border: none;">
+                                        <option value="Việt Nam">Việt Nam</option>
+                                        <option value="Hàn Quốc">Hàn Quốc</option>
+                                        <option value="Nhật Bản">Nhật Bản</option>
+                                        <option value="Thái Lan">Thái Lan</option>
+                                        <option value="Trung Quốc">Trung Quốc</option>
+                                        <option value="Lào">Lào</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12 col-sm-12">
+                                    <label for="">Địa Chỉ</label>
+                                    <span class="text-danger">*</span>
+                                    <input type="text" id="dc" style="width: 100%; padding-left: 10px;background-color:#f8f4f4; height: 50px; border: none;" placeholder="Địa Chỉ"><br><br>
+                                    <input type="text" id="dd" style="width: 100%; padding-left: 10px;background-color:#f8f4f4; height: 50px; border: none;" placeholder="Apartment, suite, unit, etc. (optional)">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12 col-sm-12">
+                                    <label for="">Tỉnh / Thành phố</label>
+                                    <span class="text-danger">*</span>
+                                    <input type="text" id="tp" style="width: 100%; padding-left: 10px;background-color:#f8f4f4; height: 50px; border: none;">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12 col-sm-12">
+                                    <label for="">Bang / Hạt</label>
+                                    <span class="text-danger">*</span>
+                                    <input type="text" id="bang" style="width: 100%; padding-left: 10px;background-color:#f8f4f4; height: 50px; border: none;">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12 col-sm-12">
+                                    <label for="">Mã bưu điện</label>
+                                    <span class="text-danger">*</span>
+                                    <input type="text" id="buudien" style="width: 100%; padding-left: 10px;background-color:#f8f4f4; height: 50px; border: none;">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12 col-sm-12">
+                                    <label for="">Phone</label>
+                                    <span class="text-danger">*</span>
+                                    <input type="text" id="phone" style="width: 100%; padding-left: 10px;background-color:#f8f4f4; height: 50px; border: none;"placeholder="Phone">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12 col-sm-12">
+                                    <label for="">Email Address</label>
+                                    <span class="text-danger">*</span>
+                                    <input type="text" id="mail" style="width: 100%; padding-left: 10px;background-color:#f8f4f4; height: 50px; border: none;"placeholder="Email Address">
+                                </div>
+                            </div><br>
+                            <div class="row">
+                                <div class="col-md-12 col-sm-12">
+                                    <form action="">
+                                        <input type="checkbox" name="" id="taotk"> Create an account?
+                                    </form>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
                 </div>
-            </div>
-            <div id="credit_wap2">
-                <h3 style="text-align: center; margin:0;">Thông tin sản phẩm</h3>
-                <div id="image_sp"></div>
-                    <div id="img_sp"></div>
-                     <div id="namesp"></div><br>
-                     <div>Số lượng:<span  id="sluong"></span></div><br>
-                    <div>Thành tiền: <span id="pricesp"></span> </div><br>
             </div>
         </div>
     </div>
@@ -948,5 +787,8 @@ function additems(imgs,tsp,price_sp,soluong,tongtien)
             </div>
         </div>
     </div>
+    <script src="../JS/Products.js"></script>
+    <script src="../JS/Buy.js"></script>
+    <script src="../JS/giohang.js"></script>
 </body>
 </html>

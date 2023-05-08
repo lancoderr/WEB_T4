@@ -4,10 +4,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GIỎ HÀNG</title>
+    <title>MUA HÀNG</title>
     <link rel="stylesheet" href="../CSS/bootstrap.min.css">
+    <script src="../JS/jquery-3.6.1.min.js"></script>
+    <script src="../JS/bootstrap.min.js"></script>
     <script src="https://kit.fontawesome.com/1f63977a4e.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="../CSS/giohang.css">
+    <link rel="stylesheet" href="../CSS/buy.css">
 </head>
 <body>
     <div class="container">
@@ -15,7 +17,7 @@
         <div class="header">
             <div class="row">
                 <div class="col-md-2 col-sm-2">
-                    <a href="../HTML/trangchu.html"><img src="../IMG/logoxgear.png" alt="LOGO" style="margin-top: 10%; margin-left: 20%;"></a>
+                    <a href="#"><img src="../IMG/logoxgear.png" alt="LOGO" style="margin-top: 10%; margin-left: 20%;"></a>
                 </div>
                 <div class="col-md-9 col-sm-9" style="margin-top: 2%;">
                     <input type="search" class="search" name="search" placeholder="Bạn cần tìm sản phẩm gì?">
@@ -286,12 +288,17 @@
                 </ul>
             </div>
         </div>
-    </div>
-    <div class="wapper_bottom">
-        <div class="contentb">
-          <table border="0" class="container_bottom" style="align-items: flex-start; justify-content: flex-start; width: 100%; display: flex;">
-              <img id="imgtt" src="../IMG/trong.jpg">
-          </table>
+        <!-- phần 2 -->
+        <div class="maincontent">
+            <div class="modal fade" id="modal">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <p>Returning customer?</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
     <div class ="footer">
@@ -367,7 +374,5 @@
             </div>
         </div>
     </div>
-    <script src="../JS/general.js"></script>
-    <script src="../JS/shop.js"></script>
 </body>
 </html>

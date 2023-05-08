@@ -11,26 +11,6 @@
     <script src="https://kit.fontawesome.com/1f63977a4e.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="../CSS/trangchu.css">
 </head>
-<script>
-    $(document).ready(function(){
-       $(".shop").click(function(){
-        $("#mymodal").modal();
-       })
-    const searchInput = document.getElementById('searchInput');
-    searchInput.addEventListener('keyup', function(event) {
-    const searchText = event.target.value.toLowerCase();
-    const cards = document.querySelectorAll('.card');
-    cards.forEach(function(card) {
-        const title = card.querySelector('.card-title').textContent.toLowerCase();
-        if (title.indexOf(searchText) === -1) {
-            card.style.display = 'none';
-        } else {
-            card.style.display = 'block';
-        }
-    });
-    });
-});
-</script>
 <body>
     <div class="container">
         <!-- phần 1 -->
@@ -47,7 +27,7 @@
                 </div>
                 <div class="col-md-1 col-sm-1" style="margin-top: 2%;">
                     <button class="shop">
-                        <i class="fa-solid fa-bag-shopping"></i>
+                        <a href="../HTML/giohang.html"><i class="fa-solid fa-bag-shopping" style="color: #f7f7f7;"></i></a>
                     </button>
                 </div>
             </div>
@@ -387,7 +367,7 @@
             <div class="row">
                 <div class="col-md-4 col-sm-4">
                     <div class="card" style="width: 26rem;">
-                        <a href=""><img class="card-img-top" src="../IMG/product1.jpg" alt="Card image cap"style="padding-top:20px; width: 350px;"></a>
+                        <a href="../HTML/one.html"><img class="card-img-top" src="../IMG/product1.jpg" alt="Card image cap"style="padding-top:20px; width: 350px;"></a>
                         <div class="card-body">
                             <div class="sell">
                                 Nâng cấp RAM chỉ 49k
@@ -395,7 +375,7 @@
                           <h5 class="card-title">Laptop Gaming Asus ROG Strix G16 G614JU-N3135W Geforce RTX 4050 6GB Intel Core i5 13450HX 8GB 512GB 16″ 165Hz FHD IPS 4-zone Win 11</h5>
                           <div class="price">
                             <h6><del>39,990,000<u>đ</u></del></h6>
-                            <h6 class="monney"> 36,990,000<u>đ</u></h6>
+                            <h6 class="monney">35,990,000<u>đ</u></h6>
                           </div>
                             <div class="show">
                                 <div class="row">
@@ -434,15 +414,15 @@
                 </div>
                 <div class="col-md-4 col-sm-4">
                     <div class="card" style="width: 26rem;">
-                        <a href=""><img class="card-img-top" src="../IMG/product1.jpg" alt="Card image cap"style="padding-top:20px; width: 350px;"></a>
+                        <a href="../HTML/two.html"><img class="card-img-top" src="../IMG/tow.png" alt="Card image cap"style="padding-top:20px; width: 350px;"></a>
                         <div class="card-body">
                             <div class="sell">
-                                Nâng cấp RAM chỉ 49k
+                                Tặng Ram 8G
                             </div>
-                          <h5 class="card-title">Laptop Gaming Asus ROG Strix G16 G614JU-N3135W Geforce RTX 4050 6GB Intel Core i5 13450HX 8GB 512GB 16″ 165Hz FHD IPS 4-zone Win 11</h5>
+                          <h5 class="card-title">Laptop Gigabyte G5 GE-51VN263SH RTX 3050 4GB Intel Core i5 12500H 8GB 512GB 15.6″ FHD 144Hz Gigabit Ethernet Black Win 11</h5>
                           <div class="price">
-                            <h6><del>39,990,000<u>đ</u></del></h6>
-                            <h6 class="monney"> 36,990,000<u>đ</u></h6>
+                            <h6><del>25,590,000<u>đ</u></del></h6>
+                            <h6 class="monney">19,490,000<u>đ</u></h6>
                           </div>
                             <div class="show">
                                 <div class="row">
@@ -481,15 +461,15 @@
                 </div>
                 <div class="col-md-4 col-sm-4">
                     <div class="card" style="width: 26rem;">
-                        <a href=""><img class="card-img-top" src="../IMG/product1.jpg" alt="Card image cap"style="padding-top:20px; width: 350px;"></a>
+                        <a href="../HTML/Three.html"><img class="card-img-top" src="../IMG/product3.jpg" alt="Card image cap"style="padding-top:20px; width: 350px;"></a>
                         <div class="card-body">
                             <div class="sell">
-                                Nâng cấp RAM chỉ 49k
+                                Hoàn Tiền 1.000.000đ
                             </div>
-                          <h5 class="card-title">Laptop Gaming Asus ROG Strix G16 G614JU-N3135W Geforce RTX 4050 6GB Intel Core i5 13450HX 8GB 512GB 16″ 165Hz FHD IPS 4-zone Win 11</h5>
+                          <h5 class="card-title">Laptop ASUS ROG Zephyrus M16 GU603ZX-K8025W Geforce RTX 3080Ti 16GB Intel Core i9 12900H 32GB 2TB 16″ WQXGA 165Hz RGB KB Win 11</h5>
                           <div class="price">
-                            <h6><del>39,990,000<u>đ</u></del></h6>
-                            <h6 class="monney"> 36,990,000<u>đ</u></h6>
+                            <h6><del>99,990,000<u>đ</u></del></h6>
+                            <h6 class="monney">69,990,000<u>đ</u></h6>
                           </div>
                             <div class="show">
                                 <div class="row">
@@ -530,15 +510,15 @@
             <div class="row">
                 <div class="col-md-4 col-sm-4">
                     <div class="card" style="width: 26rem;">
-                        <a href=""><img class="card-img-top" src="../IMG/product1.jpg" alt="Card image cap"style="padding-top:20px; width: 350px;"></a>
+                        <a href=""><img class="card-img-top" src="../IMG/four.png" alt="Card image cap"style="padding-top:20px; width: 350px;"></a>
                         <div class="card-body">
-                            <div class="sell">
-                                Nâng cấp RAM chỉ 49k
+                            <div class="sell" style="height: 50px; width: 10px;">
+                                <h1></h1>
                             </div>
-                          <h5 class="card-title">Laptop Gaming Asus ROG Strix G16 G614JU-N3135W Geforce RTX 4050 6GB Intel Core i5 13450HX 8GB 512GB 16″ 165Hz FHD IPS 4-zone Win 11</h5>
+                          <h5 class="card-title">Laptop Lenovo IdeaPad 5 Pro 14ARH7 82SJ0026VN Radeon 660M R5 6600HS 512GB 16GB 14” 2.8K 90Hz Win 11 GREY</h5>
                           <div class="price">
-                            <h6><del>39,990,000<u>đ</u></del></h6>
-                            <h6 class="monney"> 36,990,000<u>đ</u></h6>
+                            <h6><del>23,990,000<u>đ</u></del></h6>
+                            <h6 class="monney">21,490,000<u>đ</u></h6>
                           </div>
                             <div class="show">
                                 <div class="row">
@@ -577,15 +557,15 @@
                 </div>
                 <div class="col-md-4 col-sm-4">
                     <div class="card" style="width: 26rem;">
-                        <a href=""><img class="card-img-top" src="../IMG/product1.jpg" alt="Card image cap"style="padding-top:20px; width: 350px;"></a>
+                        <a href=""><img class="card-img-top" src="../IMG/product5.jpg" alt="Card image cap"style="padding-top:20px; width: 350px;"></a>
                         <div class="card-body">
-                            <div class="sell">
-                                Nâng cấp RAM chỉ 49k
+                            <div class="sell"style="height: 50px; width: 10px;">
+                                <h1></h1>
                             </div>
-                          <h5 class="card-title">Laptop Gaming Asus ROG Strix G16 G614JU-N3135W Geforce RTX 4050 6GB Intel Core i5 13450HX 8GB 512GB 16″ 165Hz FHD IPS 4-zone Win 11</h5>
+                          <h5 class="card-title">Laptop Gaming MSI GF63 Thin 11SC 664VN Geforce GTX 1650 4GB Intel Core i5 11400H 8GB 512GB 15.6” FHD 144Hz IPS Backlight Keyboard Win 11 (C)</h5>
                           <div class="price">
-                            <h6><del>39,990,000<u>đ</u></del></h6>
-                            <h6 class="monney"> 36,990,000<u>đ</u></h6>
+                            <h6><del>18,990,000<u>đ</u></del></h6>
+                            <h6 class="monney">14,890,000<u>đ</u></h6>
                           </div>
                             <div class="show">
                                 <div class="row">
@@ -624,15 +604,15 @@
                 </div>
                 <div class="col-md-4 col-sm-4">
                     <div class="card" style="width: 26rem;">
-                        <a href=""><img class="card-img-top" src="../IMG/product1.jpg" alt="Card image cap"style="padding-top:20px; width: 350px;"></a>
+                        <a href=""><img class="card-img-top" src="../IMG/product7.jpg" alt="Card image cap"style="padding-top:20px; width: 350px;"></a>
                         <div class="card-body">
-                            <div class="sell">
-                                Nâng cấp RAM chỉ 49k
+                            <div class="sell"style="height: 50px; width: 10px;">
+                                <h1></h1>
                             </div>
-                          <h5 class="card-title">Laptop Gaming Asus ROG Strix G16 G614JU-N3135W Geforce RTX 4050 6GB Intel Core i5 13450HX 8GB 512GB 16″ 165Hz FHD IPS 4-zone Win 11</h5>
+                          <h5 class="card-title">Laptop Gaming Acer Aspire 7 A715-43G-R8GA RTX 3050 4GB Ryzen 5 5625U 8GB 512GB 15.6 FHD 144Hz IPS Backlight Keyboard Win 11</h5>
                           <div class="price">
-                            <h6><del>39,990,000<u>đ</u></del></h6>
-                            <h6 class="monney"> 36,990,000<u>đ</u></h6>
+                            <h6><del>21,990,000<u>đ</u></del></h6>
+                            <h6 class="monney">17,290,000<u>đ</u></h6>
                           </div>
                             <div class="show">
                                 <div class="row">

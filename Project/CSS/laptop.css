@@ -6,7 +6,7 @@
     max-width: 100%; 
     padding: 0; 
     margin: 0 auto; 
-    height: 200px;
+    height: 2300px;
 }
 
 .header
@@ -15,7 +15,7 @@
     position: fixed; 
     height: 160px; 
     width: 100%;
-    z-index: 1;
+    z-index: 2;
 }
 
 .search
@@ -140,6 +140,18 @@
     bottom: -10px;
     left: -10px;
     display: none;
+}
+
+.menu .laptop>a::before 
+{
+    height: 5px;
+    width: 150%;
+    content: "";
+    background: #55595c;
+    position: absolute;
+    bottom: -10px;
+    left: -10px;
+    display: block;
 }
 
 .menu .sub-menu .sub-menu
@@ -539,68 +551,36 @@ r5
     left: 0;
 }
 
-.wapper_bottom{
-    max-width: 1200px;
-    margin: 0 auto;
-    min-width: 1200px;
-}
-.contentb{
-    width: 100%;
-    min-height: 50vh;
-}
-#imgtt{
-    width: 100%;
-    height: 500px;
-    margin: 0 auto;
-}
-.container_bottom th
+/* maincontent */
+
+.div
 {
-    text-align: center;
-    font-size: 25px;
+    position: absolute;
+    width: 100%;
 }
-.container_bottom td:first-child{
-    width: 300px;
-    height: 100px;
+.menu-laptop
+{   
+
+    margin-top: 12%;
+    width: 80%;
+    left: 0;
+    right: 0;
+}
+.menu-laptop li
+{
+    background-color: #121111;
+    border-radius: 7px;
+    margin-top: -2%;
 }
 
-.container_bottom td:nth-child(2){
-    width: 400px;
-    height: 100px;
-    font-size: 20px;
+.menu-laptop a
+{
+    color: #f0ecec;
+    text-decoration: none;
 }
-.container_bottom td{
-    width: 200px;
-    height: 100px;
-    text-align: center;
-    font-size: 20px;
-}
-.container_bottom td:first-child img{
-    padding: 10px;
-    width: 400px;
-    height: 300px;
-    border-radius: 30px;
+
+.menu-laptop a>p
+{
+    color: #bf0000;
     margin-left: -100px;
 }
-.container_bottom button{
-    width: 200px;
-    height: 50px;
-    cursor: pointer;
-    outline: none;
-    margin-left: 20px;
-    color: white;
-    background-color: #bf0000;
-}
-#thanhtoans{
-    color: red;
-    letter-spacing: 1px;
-    font-size: 25px;
-}
-.thanhtoanhoadon{
-    height: 100px;
-    
-}
-
-.container_bottom button:hover {
-    /* Thiết lập các thuộc tính khi nút được hover */
-    background-color: violet;
-  }
