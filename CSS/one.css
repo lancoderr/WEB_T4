@@ -3,10 +3,10 @@
 /* phần header */
 .container
 {
-    max-width: 100%; 
+    max-width: 98%; 
     padding: 0; 
     margin: 0 auto; 
-    height: 2200px;
+    height: auto;
 }
 
 .header
@@ -15,7 +15,9 @@
     position: fixed; 
     height: 160px; 
     width: 100%;
-    z-index: 1;
+    z-index: 2;
+    width: 100%;
+    margin-left: -1%;
 }
 
 .search
@@ -142,6 +144,17 @@
     display: none;
 }
 
+.menu >li .tc::before 
+{
+    height: 5px;
+    width: 120%;
+    content: "";
+    background: #55595c;
+    position: absolute;
+    bottom: -10px;
+    left: -10px;
+    display: none;
+}
 .menu .sub-menu .sub-menu
 {
     left: 170px;
@@ -225,152 +238,7 @@
 
 /* phần nội dung */
 
-.sub .container .row a>img
-{
-    border-radius: 7px;
-}
 
-.hotdeal
-{
-    margin-top: 1%;
-    width: 85%;
-    background-color: red;
-    height: 100px;
-    padding-top: 10px ;
-    border-radius: 7px;
-    padding-left: 5px;
-    padding-right: 5px;
-}
-.hotdeal .on
-{
-    background-color:#fae39b;
-    height: 80px;
-    text-align: center;
-    border-radius: 7px;
-}
-.hotdeal .on >h1
-{
-    font-size: 60px;
-}
-
-.sell
-{
-    position: absolute;
-    background-color: #00483d;
-    top: 0px;
-    width: 220px;
-    left: 0;
-    color: #e4e616;
-    text-align: center;
-    border-radius: 7px;
-}
-.price
-{
-    display: flex;
-}
-.product .monney
-{
-    color: #bf0000;
-}
-.product .card
-{
-    border-radius: 10px;
-}
-
-.card-title
-{
-    font-size: 14px;
-}
-
-.col-md-6 >p
-{
-    font-size: 12px;
-    padding-top: 5px;
-}
-.show .row
-{
-    background-color: #f0ecec;
-    width: 80%;
-    padding: 4px;
-    margin-left: 10%;
-}
-
-.show .row:hover 
-{
-    background-color: #f5f5f5;
-}
-/* làm hiệu ứng hover vào mấy thẻ bán hàng  */
-.card:hover 
-{
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-}
-
-/* css menulp */
-.menulp
-{
-    position: relative;
-    background-color: #f50912;
-    display: flex;
-    justify-content: space-around;
-    justify-items: center;
-    width: 86%;
-    height: 65px;
-    border-radius: 7px;
-    margin-top: 10px;
-}
-.menulp .navbar
-{
-    list-style: none;
-    width: 100%;
-    display: flex;
-    justify-content: space-around;
-    justify-items: center;
-}
-.menulp .navbar li a
-{
-    display: block;
-    text-decoration: none;
-    font-size: 17px;
-    color: black;
-}
-.menulp .navbar li
-{
-    background-color: #f3f4f6;
-    height: 40px;
-    width: 11%;
-    text-align: center;
-    border-radius: 7px;
-}
-
-/* làm hiệu ứng hover vào li sẽ thu nhỏ */
-.nav-item:hover 
-{
-    transform: scale(0.95);
-}
-
-.showpr .row
-{
-    background-color: #f0ecec;
-    width: 100%;
-    padding: 4px;
-    margin-left: 1%;
-}
-
-.showpr .row:hover 
-{
-    background-color: #f5f5f5;
-}
-
-#show-all>a
-{
-    list-style: none;
-    text-decoration: none;
-    color: black;
-}
-#show-all
-{
-    border: none;
-}
 /* footer */
 .r1
 {
@@ -539,12 +407,307 @@ r5
     left: 0;
 }
 
+.maincontent
+{
+    position: absolute;
+    margin-top: 180px;
+    margin-left: 170px;
+    z-index: 1;
+}
+
+a.text-danger:hover 
+{
+    text-decoration: none; /* Bỏ gạch chân khi hover */
+}
+
+.wapper_review_product{
+    width: 100%;
+    min-height: 100vh;
+    min-width: 1200px;
+    position: relative;
+}
+
+.wapper_review_product .container_review_product{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    margin-top: 200px;
+    
+}
+
+.wapper_review_product .container_review_product .review{
+    padding: 20px;
+    width: 100%;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    margin: 25px 0 25px 0;
+    
+}
+
+.wapper_review_product .container_review_product .review span:first-child{
+    font-size: 13px;
+    text-decoration: line-through;
+}
+.wapper_review_product .container_review_product .review span:last-child{
+    color: red;
+}
+.wapper_review_product .container_review_product td{
+    width: 50%;
+    height: 350px;
+    padding: 0 50px 0 0;
+}
+.wapper_review_product .container_review_product img{
+    width: 80%;
+    height: 350px;
+    border-radius: 6px;
+    margin-left: 100px;
+}
+form{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.box_form_buy{
+    width: 120px;
+    position: relative;
+    left: -25px;
+}
+.max_in, .mini_in{
+    width: 30px;
+    height: 30px;
+    border: none;
+    cursor: pointer;
+    margin: 0;
+    padding: 0;
+    }
+.max_in{
+    position: relative;
+    left: -5px;
+}
+.mini_in{
+    position: relative;
+    left: 5px;
+}
+#number_in
+{
+    width: 40px;
+    height: 25px;
+    text-align: center;
+    outline: none;
+    margin: 0;
+    padding: 0;
+    border-color:#ddd #ddd;
+    border-style: solid;
+    border-left: 1px;
+    border-right: 1px;
+}
+#ThemSP
+{   
+    position: relative;
+    left: -25px;
+    width: 120px;
+    height: 30px;
+    border:none ;
+    color: white;
+    background-color: red;
+    border-radius: 2px;
+    cursor: pointer;
+    font-weight: 600px;
+    border: 1px solid black;
+    transition: all 0.5s;
+}
+#BuySp
+{  
+    position: relative;
+    left: -20px;
+    width: 100px;
+    height: 30px;
+    border:none ;
+    color: white;
+    background-color:red;
+    border-radius: 2px;
+    cursor: pointer;
+    font-weight: 600px;
+    border: 1px solid black;
+    transition: all 0.5s;
+}
+#BuySp:hover
+{
+    background-color: rgb(255, 0, 0);
+    color: white;
+    box-shadow: 0px 0px 10px 0px rgb(0, 0, 0);
+}
+#ThemSP:hover
+{
+    background-color: rgb(255, 0, 0);
+    color: white;
+    box-shadow: 0px 0px 10px 0px rgb(0, 0, 0);
+}
+
+.showpr .row
+{
+    background-color: #f0ecec;
+    width: 100%;
+    padding: 4px;
+    margin-left: 1%;
+}
+.showpr .row:hover 
+{
+    background-color: #f5f5f5;
+}
+
+.card:hover 
+{
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+.sell
+{
+    position: absolute;
+    background-color: #00483d;
+    top: 0px;
+    width: 220px;
+    left: 0;
+    color: #e4e616;
+    text-align: center;
+    border-radius: 7px;
+}
+.price
+{
+    display: flex;
+}
+.product .monney
+{
+    color: #bf0000;
+}
+.product .card
+{
+    border-radius: 10px;
+}
+
+.card-title
+{
+    font-size: 14px;
+}
+
+.col-md-6 >p
+{
+    font-size: 12px;
+    padding-top: 5px;
+}
+
+
+#credit{
+    display: none;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    background-color: rgba(128, 128, 128, 0.578);
+    width: 100%;height: 100%;
+    z-index: 1;
+}
+#credit_wap1{
+    padding: 20px;
+    box-sizing: border-box;
+    width: 500px;
+    height: 500px;
+    background-color: white;
+    border-radius: 10px;
+    margin-right: 10px;
+}
+#credit_wap2{
+    padding: 20px;
+    box-sizing: border-box;
+    width: 300px;
+    height: 500px;
+    background-color: white;
+    border-radius: 10px;
+}
+#credit_wap1 form{
+    display: block;
+}
+#credit_wap1 form input[type=text]{
+    padding: 10px;
+    width: 100%;
+    outline: none;
+    margin: 10px;
+    margin-left: 0;
+    box-sizing: border-box;
+}
+#credit_wap1 form input[type=text]:focus{
+    border: 2px solid green;
+}
+#credit_wap1 form input[type=radio]{
+   cursor: pointer;
+}
+#namesp{
+    display: flex;
+    align-items: center;
+    height: 30px;
+    font-size: 15px;
+    font-weight: bold;
+
+}
+#pricesp
+{
+    display: inline-flex;
+    align-items: center;
+    justify-content: flex-end;
+    height: 50px; 
+    font-size: 20px;
+    width: 65%;
+    color: red;
+}
+#phanhoi{
+    margin-top: 5px;
+    height: 50px;
+    width: 100%;
+    color: red;
+    padding: 10px;
+    font-weight: bold ;
+}
+#credit_wap1 form button{
+    margin-top: 50px;
+    padding: 10px;
+    width: 100%;
+    outline: none; 
+    cursor: pointer;
+}
+#img_sp{
+    box-sizing: border-box;
+    padding: 10px;
+    width: 100%;
+    height: 250px;
+    margin-bottom: 5px;
+}
+#img_sp img{
+    width: 100%;
+    height: 240px;
+    border-radius: 10px;
+}
+#sluong{
+    display: inline-block;
+    width: 70%;
+    text-align: end;
+    font-size: 20px;
+}
+
+.modal-dialog
+{
+    max-width: 800px;
+}
+
+
 /* phần liên hệ */
 
 .lienhe
 {
     z-index: 99;
 }
+
 .phone-icon
 {
     border-radius: 50%;
@@ -573,4 +736,3 @@ r5
     background-color: #ffffff;
     padding: 3px;
 }
-

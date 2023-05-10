@@ -1,93 +1,57 @@
-*
+*{padding: 0; margin: 0 auto;}
+
+/* phần header */
+.container
 {
-    padding: 0;
-    margin: 0 auto;
-    box-sizing: border-box;
+    max-width: 100%; 
+    padding: 0; 
+    margin: 0 auto; 
+    height: 2300px;
 }
-.wrapper
-{
-    height: 3000px;
-}
+
 .header
 {
-    margin: 0;
-    padding: 0;
+    background-color: #c00404; 
+    position: fixed; 
+    height: 160px; 
     width: 100%;
-    height: 160px;
-    background-color:#bf0000;
-    position: fixed;
-    z-index: 1;
+    z-index: 2;
 }
-.nut
-{   
-    display: flex;
-    width: 100%;
-    position: relative;
-    left: 10%;
-}
-.top-menu img
+
+.search
 {
-    position: absolute;
-    top: 5%;
-    left: 5%;
-}
-.input
-{
-    position: relative;
-    width: 100%;
-    height: 36px;
-    border-radius: 7px;
-    border: none;
+    /* position: relative; */
+    width: 94%;height: 36px;
+    border-radius: 7px;border: none;
     border-top-right-radius: 0;
     border-bottom-right-radius: 0;
     outline: none;
-    padding-left: 10px;
-    background-color: #f0ecec;
+    background-color: #f0ecec; 
+    padding-left: 1%;
 }
+
+.shop
+{
+    height: 41.5px;
+    width: 40px;
+    background-color: #bf0000;
+    border: none;
+    cursor: pointer;
+}
+
 .button
 {
-    position: relative;
-    right: 0;
-    top: 0;
-    left: 10%;
-    width: 7%;
-    height: 36px;
+    width: 6%; 
+    position: absolute;
+    height: 36px; 
     font-size: 20px;
     background-color: black;
-    border: 0;
-    border-top-right-radius: 7px;
+    border: none;
+    border-top-right-radius: 7px; 
     border-bottom-right-radius: 7px;
     cursor: pointer;
 }
-.shop
-{
-    position: relative;
-    height: 41.5px;
-    width: 40px;
-    left: 13%;
-    background-color: #bf0000;
-    border: 0;
-    cursor: pointer;
-}
-.top ul 
-{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-.top-menu
-{
-    list-style: none;
-}
-.top-menu >a
-{
-    text-decoration: none;
-}
-.container
-{
-    padding-top: 15px;
-    padding-left: 25px;
-}
+
 .content
 {
     position: relative;
@@ -98,17 +62,20 @@
     width: 99%;
     height: 65px;
     border-radius: 7px;
-    margin-top: 10px;
+    margin-top: 5px;
     
 }
+
 .content .menu
 {
     width:1100px;
 }
+
 .content .menu 
 {
     list-style: none;
 }
+
 .menu li a
 {
     display: block;
@@ -116,22 +83,26 @@
     color: aliceblue;
     font-size: 17px;
 }
+
 .menu li
 {
     position: relative;
 }
+
 .menu .sub-menu 
 { 
     display: none; 
     position: absolute;
     padding: 15px 0px;
     list-style: none;
-    width: 170px;
+    width: 160px;
     height: 345px;
     background-color: #fff;
     margin-top: 10px;
     margin-left: -10px;
+    transition: all 0.3s ease-in-out;
 }
+
 .content .menu
 {
     display: flex;
@@ -139,33 +110,62 @@
     justify-items: center;
     margin-top: 20px;
 }
+
 .menu .sub-menu a
 {
     /* margin-top: -15px; */
     padding: 20px;
     padding-left:20px;
     color: black;
-    font-size: 15px;
-    
+    font-size: 12px; 
 }
+
 .menu >li>a
 {
     position: relative;
 }
-.menu .laptop >a::before 
+
+.menu .sub-menu a
 {
-    height: 3px;
+    left: 0px;
+}
+
+.menu >li>a::before 
+{
+    height: 5px;
     width: 150%;
     content: "";
     background: #55595c;
     position: absolute;
     bottom: -10px;
     left: -10px;
+    display: none;
 }
-.menu .sub-menu a
+
+.menu .laptop>a::before 
 {
-    left: 0px;
+    height: 5px;
+    width: 150%;
+    content: "";
+    background: #55595c;
+    position: absolute;
+    bottom: -10px;
+    left: -10px;
+    display: block;
 }
+
+.menu .manhinh>a::before 
+{
+    height: 5px;
+    width: 130%;
+    content: "";
+    background: #55595c;
+    position: absolute;
+    bottom: -10px;
+    left: -10px;
+    display: block;
+}
+
 .menu .sub-menu .sub-menu
 {
     left: 170px;
@@ -173,109 +173,433 @@
     height: 345px;
     width: 150px;
 }
+
 .menu li:hover >.sub-menu
 {
     display: block;
+    transition-delay: 0.2s;
 }
+
+.menu >li:hover>a::before
+{
+    display: block;
+}
+
+.menu .sub-menu li > a 
+{
+    transition: all 0.3s ease-in-out;
+}
+
 .menu .sub-menu li:hover >a
 {
     background-color: #55595c;
     color: #fff;
+    transition-delay: 0.2s;
 }
+
 .menu .sub-menu .sub-menu
 {
     width: 170px;
 }
+
 .menu .sub-menu .sub-menu .sub-menu
 {
     width: 210px;
 }
+
 .menu .sub-menu :first-child
 {
     margin-top: -15px;
 }
+
 .menu .sub-menu :nth-child(2)
 {
     margin-top: 15px;
 }
+
 .menu .sub-menu :nth-child(3)
 {
     margin-top: 15px;
 }
+
 .menu .sub-menu :nth-child(4)
 {
     margin-top: 15px;
 }
+
 .menu .sub-menu :nth-child(5)
 {
     margin-top: 15px;
 }
+
 .menu .sub-menu :nth-child(6)
 {
     margin-top: 15px;
 }
+
 .menu .sub-menu :nth-child(7)
 {
     margin-top: 15px;
 }
+
 .menu .sub-menu :nth-child(8)
 {
     margin-top: 15px;
 }
-.container .menu-con-con
+
+/* phần nội dung */
+
+.sub .container .row a>img
 {
-    width:1100px;
-}
-.container .menu-con-con 
-{
-    list-style: none;
-}
-.menu-con-con
-{
-    display: flex;
-}
-.menu-con-con li a
-{
-    display: block;
-    text-decoration: none;
-    color: #fff;
-    font-size: 17px;
-    background-color: black;
-    padding: 3px 18px;
     border-radius: 7px;
 }
-.menu-con-con li 
+
+.hotdeal
+{
+    margin-top: 1%;
+    width: 85%;
+    background-color: red;
+    height: 100px;
+    padding-top: 10px ;
+    border-radius: 7px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+.hotdeal .on
+{
+    background-color:#fae39b;
+    height: 80px;
+    text-align: center;
+    border-radius: 7px;
+}
+.hotdeal .on >h1
+{
+    font-size: 60px;
+}
+
+.sell
+{
+    position: absolute;
+    background-color: #00483d;
+    top: 0px;
+    width: 10px;
+    left: 0;
+    color: #e4e616;
+    text-align: center;
+    border-radius: 7px;
+    height: 50px;
+}
+.price
 {
     display: flex;
 }
-.slider .container h5
-{
-    font-size: 17px;  
-    text-align: center;
-}
-.slider .container .monney
+.product .monney
 {
     color: #bf0000;
 }
-.slider .container p
+.product .card
 {
-    font-size: 10px;  
+    border-radius: 10px;
 }
-.slider .container .col-md-6 img
+
+.card-title
 {
-    height: 20px;
-    width: 20px;
+    font-size: 14px;
 }
-.slider .container .show
+
+.col-md-6 >p
 {
-    background-color: #f2f2f2;
-    padding: 10px;
+    font-size: 12px;
+    padding-top: 5px;
 }
-.tien
+.show .row
+{
+    background-color: #f0ecec;
+    width: 80%;
+    padding: 4px;
+    margin-left: 10%;
+}
+
+.show .row:hover 
+{
+    background-color: #f5f5f5;
+}
+/* làm hiệu ứng hover vào mấy thẻ bán hàng  */
+.card:hover 
+{
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+/* css menulp */
+.menulp
+{
+    position: relative;
+    background-color: #f50912;
+    display: flex;
+    justify-content: space-around;
+    justify-items: center;
+    width: 86%;
+    height: 65px;
+    border-radius: 7px;
+    margin-top: 10px;
+}
+.menulp .navbar
+{
+    list-style: none;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    justify-items: center;
+}
+.menulp .navbar li a
+{
+    display: block;
+    text-decoration: none;
+    font-size: 17px;
+    color: black;
+}
+.menulp .navbar li
+{
+    background-color: #f3f4f6;
+    height: 40px;
+    width: 11%;
+    text-align: center;
+    border-radius: 7px;
+}
+
+/* làm hiệu ứng hover vào li sẽ thu nhỏ */
+.nav-item:hover 
+{
+    transform: scale(0.95);
+}
+
+.showpr .row
+{
+    background-color: #f0ecec;
+    width: 100%;
+    padding: 4px;
+    margin-left: 0px;
+}
+
+.showpr .row:hover 
+{
+    background-color: #f5f5f5;
+}
+
+#show-all>a
+{
+    list-style: none;
+    text-decoration: none;
+    color: black;
+}
+#show-all
+{
+    border: none;
+}
+/* footer */
+.r1
+{
+    float: left;
+    height: 342px;
+    width: 227px;
+    margin-top:50px;
+    margin-left: 50px;
+ 
+}
+
+.logo1
+{
+    width: 200px;
+    height: 75px;
+}
+
+.r2
+{
+    float: left;
+    height: 500px;
+    width: 200px;
+    margin-top: 30px;
+ 
+}
+
+
+.rr2
+{
+    color: #121111;
+    text-decoration: none;
+}
+
+.rr2:hover
+{
+    color: #429ccd;
+    text-decoration: none;
+}
+
+.bct
+{
+    width: 195px;
+    height: 80px;
+}
+.r3
+{
+    float: left;
+    height: 400px;
+    width: 210px;
+    margin-top: 30px;  
+}
+.rr3:hover
+{
+    color: rgb(32, 30, 30);
+}
+.r4
+{
+    float: left;
+    height: 400px;
+    width: 320px;
+    margin-top: 30px;
+   
+}
+
+.r5
+{
+    width: 850px;
+    margin-top: 150px;
+    margin-left: -455px;
+}
+
+r5
+{
+    position: absolute;
+    float: left;
+    background-color: aqua;
+    margin-right: 20px;
+    margin-top: -221px;
+    height: 30px;
+    width: 850px;
+ 
+}
+
+
+.bando
+{
+    border-radius: 10px 10px 10px 10px;
+    border: 1px solid;
+    border: 3px solid #ffcccc;
+    box-shadow: 0px 0px 5px 3px #999999;
+    height: 127px;
+    width: 300px;
+    line-height: 100px;
+    text-align: center;
+    margin-top: 10px;
+    margin-left: 0px;
+}
+.icon
 {
     display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 300px;
+    height: 80px;
+    gap: 20px;
+    margin-left: -60px;
+    margin-top: -30px;
+ 
 }
-.sell
+.icon>i
+{
+    line-height: 90px;
+}
+.nen-icon
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+    width: 40px;
+    background-color: white;
+    color: #121111;
+    border-radius: 40px;
+
+}
+.nen-icon-insta
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+    width: 40px;
+    background-color: white;
+    border-radius: 40px;
+
+}
+.nen-icon-yt
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+    width: 40px;
+    background-color: white;
+    border-radius: 40px;
+
+}
+.tt-icon
+{
+    text-decoration: none;
+    color: black;
+
+} 
+.footer
+{   
+    width: 100%;
+    margin-top: 5%;
+    position: absolute;
+    background-color: #f5f5f7;
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+    padding: 0 100px;
+    height: 650px;
+    right: 0;
+    left: 0;
+}
+
+/* maincontent */
+
+.div
+{
+    position: absolute;
+    width: 100%;
+}
+.menu-laptop
+{   
+
+    margin-top: 12%;
+    width: 80%;
+    left: 0;
+    right: 0;
+}
+.menu-laptop li
+{
+    background-color: #121111;
+    border-radius: 7px;
+    margin-top: -2%;
+}
+
+.menu-laptop a
+{
+    color: #f0ecec;
+    text-decoration: none;
+}
+
+.menu-laptop a>p
+{
+    color: #bf0000;
+    margin-left: -100px;
+}
+
+
+.selll
 {
     position: absolute;
     background-color: green;
@@ -285,179 +609,110 @@
     color: #fff;
     text-align: center;
 }
-.banner
+
+/* phần liên hệ */
+.lienhe
 {
-    position: absolute;
-    margin-top: 10%;
-    right: 0;
-    left: 0;
+    z-index: 99;
 }
-.slider
+
+.phone-icon
 {
-    position: absolute;
-    margin-top: 22%;
-    right: 0;
-    left: 0;
-}
-.r1{
-    float: left;
-     height: 342px;
-     width: 227px;
-     margin-top:50px;
-     margin-left: 50px;
- 
+    border-radius: 50%;
+    box-shadow: 0 3px 10px #888;
+    background-size: 70%;
+    background-color: #34dc51;
+    padding: 3px;
 }
 
-
-
-
-
-.logo1{
- width: 200px;
- height: 75px;
-}
-.r2{
- 
- float: left;
-     height: 500px;
-     width: 200px;
-     margin-top: 30px;
- 
+.zalo-icon
+{
+    margin-top: 10px;
+    border-radius: 50%;
+    box-shadow: 0 3px 10px #888;
+    background-size: 70%;
+    background-color: #0084ff;
+    padding: 3px;
 }
 
-
-.rr2{
-
-color: #121111;
-text-decoration: none;
+.mess-icon
+{
+    margin-top: 10px;
+    border-radius: 50%;
+    box-shadow: 0 3px 10px #888;
+    background-size: 70%;
+    background-color: #ffffff;
+    padding: 3px;
 }
 
-.rr2:hover{
- color: #429ccd;
- text-decoration: none;
-}
-
-.bct{
- width: 195px;
- height: 80px;
-}
-.r3{
- float: left;
-     height: 400px;
-     width: 210px;
-     margin-top: 30px;
-    
-}
-.rr3:hover{
- color: rgb(32, 30, 30);
-}
-.r4{
- float: left;
-     height: 400px;
-     width: 320px;
-     margin-top: 30px;
+div.stars {
+    width: 270px;
+    display: inline-block;
+  }
    
-}
-
-.r5{
- 
- width: 850px;
- margin-top: 150px;
- margin-left: -455px;
-
-}
-
-r5{
- position: absolute;
- float: left;
- background-color: aqua;
- margin-right: 20px;
- margin-top: -221px;
- height: 30px;
- width: 850px;
- 
-}
+  input.star { display: none; }
+   
+  label.star {
+    float: left;
+    padding: 5px;
+    font-size: 20px;
+    color: #FD4;
+    transition: all .2s;
+  }
+   
+/* input.star:checked ~ label.star:before{
+    content: '\f005';
+    color: #FD4;
+    transition: all .25s;
+  }
 
 
-.bando{
+input.star-5:checked ~ label.star:before {
+    color: #FE7;
+    text-shadow: 0 0 20px #952;
+  }
+   
+input.star-1:checked ~ label.star:before { color: #F62; } */
+   
+label.star:hover { transform: rotate(-15deg) scale(1.3); }
+   
+label.star:before {
+    content: '\f005';
+    font-family: FontAwesome;
+  }
+  
+  .menu .xgearpc>a::before 
+  {
+      height: 5px;
+      width: 130%;
+      content: "";
+      background: #55595c;
+      position: absolute;
+      bottom: -10px;
+      left: -10px;
+      display: block;
+  }
 
- border-radius: 10px 10px 10px 10px;
- border: 1px solid;
-
-
-
- border: 3px solid #ffcccc;
-box-shadow: 0px 0px 5px 3px #999999;
-height: 127px;
-width: 300px;
-line-height: 100px;
-text-align: center;
-
-margin-top: 10px;
-margin-left: 0px;
-}
-.icon{
-
- display: flex;
- justify-content: center;
- align-items: center;
- width: 300px;
- height: 80px;
- gap: 20px;
- margin-left: -60px;
- margin-top: -30px;
- 
-}
-.icon>i{
-
-
- line-height: 90px;
-
-}
-.nen-icon{
-display: flex;
-justify-content: center;
-align-items: center;
- height: 40px;
- width: 40px;
- background-color: white;
- color: #121111;
- border-radius: 40px;
-
-}
-.nen-icon-insta{
- display: flex;
-justify-content: center;
-align-items: center;
- height: 40px;
- width: 40px;
- background-color: white;
- border-radius: 40px;
-
-}
-.nen-icon-yt{
- display: flex;
-justify-content: center;
-align-items: center;
- height: 40px;
- width: 40px;
- background-color: white;
- border-radius: 40px;
-
-}
-.tt-icon{
-text-decoration: none;
-color: black;
-
-} 
-.footer
+  .menu .manhinh>a::before 
 {
-    width: 100%;
-    margin-top: 155%;
+    height: 5px;
+    width: 130%;
+    content: "";
+    background: #55595c;
     position: absolute;
-    background-color: #f5f5f7;
-    display: flex;
-    justify-content: center;
-    justify-items: center;
-    padding: 0 100px;
+    bottom: -10px;
+    left: -10px;
+    display: block;
+}
+
+.menu .linhkien>a::before 
+{
+    height: 5px;
+    width: 130%;
+    content: "";
+    background: #55595c;
+    position: absolute;
+    bottom: -10px;
+    left: -10px;
+    display: block;
 }
